@@ -1,10 +1,11 @@
-import { Photographer } from "../models/Photographer.js";
-import { datas } from "../datas/FishEyeData.js"
+import {getPhotographers} from "../service/service.js";
 
-const photographers = datas.photographers;
+getPhotographers()
+.then((photographers) => displayPhotographers(photographers))
 
 // Parcour la liste des photographe et affiche l'HTML du photographe dans le body  (en dynamique)
-function displayPhotographers() {
+function displayPhotographers(photographers) {
+    console.log(photographers)
     // Récupération du main
     const photographersContainer = document.getElementById('photographers-container');
     // Boucles sur la liste des photographes
@@ -18,4 +19,3 @@ function displayPhotographers() {
     };
 }
 
-displayPhotographers();
