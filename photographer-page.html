@@ -5,16 +5,42 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/public/css/photographer-page.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b62bead743.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
 </head>
 
 <body>
     <header>
-        <img src="/public/assets/logo/logo.png" class="logo" />
+        <a href="/index.html"><img src="/public/assets/logo/logo.png" class="logo" /></a>
     </header>
     <main id="main">
         <div class="photograph-header">
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <div class="photograph-header-bloc">
+                <h1 id="name" class="photograph-name"></h1>
+                <h2 id="city" class="photograph-city"></h2>
+                <h3 id="desc" class="photograph-desc"></h3>
+            </div>
+            <div class="photograph-header-bloc">
+                <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            </div>
+            <div class="photograph-header-bloc">
+                <img id="img" class="photograph-img" src="" alt="">
+            </div>
+        </div>
+        <p>Trier par</p>
+        <nav>
+            <ul class="firstbloc">
+                <li class="firstchoice"><a href="#">Popularité<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="secondbloc">
+                        <div class="white-line"></div>    
+                        <li class="secondchoice"><a href="#">Date</a></li>
+                        <div class="white-line"></div>
+                        <li class="thirdchoice"><a href="#">Titre</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="photograph-medias">
         </div>
     </main>
     <div id="contact_modal">
