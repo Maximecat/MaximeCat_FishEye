@@ -1,14 +1,17 @@
 import { Photographer } from "../models/Photographer.js"
 import { Video } from "../models/Video.js"
-import { Image } from "../models/Image"
+import { Image } from "../models/Image.js"
 
 export function getPhotographers() {
     return fetch('public/datas/datas.json')
-        .then((response) => response.json())
-        .then((datas) => datas.photographers
-            .map((photographer) => {
-                return new Photographer(photographer)
-            }))
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(datasjson) {
+            return datasjson.photographers.map(function(photographer) {
+                return new Photographer(photographer);
+            })
+        })
 }
 
 export function getPhotographer(photographerId) {
@@ -19,6 +22,7 @@ export function getPhotographer(photographerId) {
 }
 
 export function getMedias(photographerId) {
+
     // Utiliser méthode filter
     return fetch('public/datas/datas.json')
         .then((response) => response.json())
