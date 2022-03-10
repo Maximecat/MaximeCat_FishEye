@@ -2,12 +2,67 @@
     display: none;
 }
 
+
+
+/* Logo */
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+
+
+/* Banniére Photographe */
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
 }
 
+/* Nom */
+.photograph-name {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 83px;
+    margin-left: 50px;
+    
+    color: #D3573C;
+
+    padding-top: 60px;
+}
+
+/* Ville */
+.photograph-city {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    margin-left: 50px;
+    margin-top: -40px;
+
+    color: #901C1C;
+}
+
+/* Description */
+.photograph-desc {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    margin-left: 50px;
+
+    color: #525252;
+}
+
+/* Bouton "contact" to Modal */
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -19,7 +74,135 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    height: 69px;
+    left: 43.15%;
+    right: 43.15%;
+    top: 160px;
+    margin-top: 137px;
 }
+
+/* Image */
+.photograph-img {
+    position: absolute;
+    right: 152px;
+    top: 245px;
+    bottom: 54px;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 90px;
+}
+
+/* Dropdown menu */
+p {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    float: left;
+    margin-left: 100px;
+
+    color: #000000;
+}
+
+nav * {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 4px;
+    padding-left: 5px;
+    z-index: 999;
+}
+
+nav {
+    width: 140px;
+    height: 47px;
+    background: #911C1C;
+    border-radius: 5px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.firstbloc {
+    background-color: #911C1C;
+    border-radius: 5px;
+}
+
+.firstchoice {
+    list-style: none;
+    padding-top: 8px;
+}
+
+.firstchoice a {
+    font-family: DM Sans;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+.firstchoice i {
+    padding: 2px 0px 4px 20px;
+}
+
+.firstchoice:hover i {
+    transition: 0.5s;
+    transform: rotateX(180deg);
+    padding: 2px 0px 4px 20px;
+}
+
+.secondbloc {
+    display: none;
+    border-radius: 5px;
+    padding-top: 0px;
+}
+
+.firstchoice:hover .secondbloc {
+    display: block;
+    font-family: DM Sans;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.secondchoice {
+    list-style: none;
+    padding-top: 10px;
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-top: 25px;
+}
+
+.thirdchoice {
+    list-style: none;
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.white-line {
+    border-top: 1px solid white;
+    position: absolute;
+    width: 115px;
+    margin-top: 12px;
+}
+
+#photograph-medias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 95px;
+    margin: 100px;
+    height: 700px;
+    border: 1px solid black;
+}
+
+/* Modal */
 
 .modal {
     border-radius: 5px;
