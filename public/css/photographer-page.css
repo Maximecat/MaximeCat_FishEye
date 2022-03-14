@@ -3,7 +3,6 @@
 }
 
 
-
 /* Logo */
 
 .logo {
@@ -82,7 +81,7 @@
     margin-top: 137px;
 }
 
-/* Image */
+/* Photo de profil photographe */
 .photograph-img {
     position: absolute;
     right: 152px;
@@ -94,8 +93,9 @@
     border-radius: 90px;
 }
 
-/* Dropdown menu */
+/* Menu Dropdown */
 p {
+    position: absolute;
     font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
@@ -112,16 +112,16 @@ nav * {
     padding: 0px;
     padding-top: 4px;
     padding-left: 5px;
-    z-index: 999;
 }
 
 nav {
+    position: absolute;
     width: 140px;
     height: 47px;
     background: #911C1C;
     border-radius: 5px;
     float: left;
-    margin-left: 30px;
+    margin-left: 200px;
     margin-top: 10px;
 }
 
@@ -193,17 +193,56 @@ nav {
     margin-top: 12px;
 }
 
+
+/* Medias du photographe */
 #photograph-medias {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 95px;
     margin: 100px;
     height: 700px;
-    border: 1px solid black;
+}
+
+.photograph-media {
+
+}
+
+.photograph-picture {
+    display: flex;
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.about-picture {
+    display: flex;
+    padding: 15px 5px 0px 5px;
+    justify-content: space-between;
+    width: 350px;
+    margin: auto;
+}
+
+.picture-title {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+
+    color: #901C1C;
+}
+
+.picture-likes {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+
+    color: #901C1C;
 }
 
 /* Modal */
-
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
