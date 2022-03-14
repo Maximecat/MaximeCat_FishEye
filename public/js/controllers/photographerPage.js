@@ -46,9 +46,10 @@ function displayMedias(medias) {
     pictureTitle.innerText = media.title;
     pictureLikes.innerText = media.likes;
 
+
     aboutPicture.appendChild(pictureTitle);
     aboutPicture.appendChild(pictureLikes);
-    // photographMedia.appendChild(photographPicture);
+    photographMedia.appendChild(photographPicture);
     photographMedia.appendChild(aboutPicture);
     photographMedias.appendChild(photographMedia);
 
