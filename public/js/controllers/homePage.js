@@ -1,45 +1,24 @@
+import { PhotographerFactory } from "../service/PhotographerFactory.js";
 import { getPhotographers } from "../service/service.js";
 
+// Fonction de récupération des photographes, une fois fais on appel la fonction 'displayPhotographers' qui parcours la liste des photographes et les affiche dans le main (en dynamique)
 getPhotographers()
     .then((photographers) => displayPhotographers(photographers))
 
-// Parcour la liste des photographe et affiche l'HTML du photographe dans le body  (en dynamique)
+// Fonction qui parcours la liste des photographes et les affiche dans le main (en dynamique)
 function displayPhotographers(photographers) {
-    console.log(photographers)
+
     // Récupération du main
     const photographersContainer = document.getElementById('photographers-container');
-    // Boucles sur la liste des photographes
+
+    // Boucle sur la liste des photographes
     for (const photographer of photographers) {
-        // Pour chaque .. photographes, création d'une div
-        const link = document.createElement('a');
-        const article = document.createElement('article');
-        const image = document.createElement('img');
-        const nom = document.createElement('h2');
-        nom.className = "nom";
-        const ville = document.createElement('div');
-        ville.className = "ville";
-        const description = document.createElement('div');
-        description.className = "description";
-        const prix = document.createElement('div');
-        prix.className = "prix";
 
-        link.appendChild(article);
-        article.appendChild(image);
-        article.appendChild(nom);
-        article.appendChild(ville);
-        article.appendChild(description);
-        article.appendChild(prix);
-
-        link.href = "/photographer-page.html?id=" + photographer.id;
-        image.src = "/public/images/Photographers/" + photographer.portrait;
-        nom.innerText = photographer.name;
-        ville.innerText = photographer.city + ", " + photographer.country;
-        description.innerText = photographer.tagline;
-        prix.innerText = photographer.price + "€/jour";
-        
-        
-
-        // Pour chaque .. photographe on insere la div crée dans le conteneur (main)
-        photographersContainer.appendChild(link);
+        // Récupération de la Factory -> 'PhotographerFactory'
+        const photographerFactory = new PhotographerFactory(photographer);
+    
+        // Dans notre main crée un nouvelle card ou un "enfant" a la précédente, t'en qu'il y a un nouveau photographe 
+        // ( à partir du model dans notre "class" -> 'PhotographerFactory' de la méthode createPhotographerCard() )
+        photographersContainer.appendChild(photographerFactory.createPhotographerCard());
     };
 }
