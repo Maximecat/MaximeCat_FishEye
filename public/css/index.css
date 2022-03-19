@@ -8,7 +8,7 @@ body {
     margin-right: 100px;
 }
 
-
+/*///////      HEADER      ///////*/
 header {
     display: flex;
     flex-direction: row;
@@ -16,11 +16,7 @@ header {
     align-items: center;
 }
 
-h1 {
-    color: #901C1C;
-    margin-right: 120px;
-}
-
+/*/      LOGO      /*/
 .logo {
     height: 60px;
     margin-left: 130px;
@@ -28,6 +24,19 @@ h1 {
     align-content: center;
 }
 
+/*/      ESPACE LOGO-TITRE      /*/
+.space-header {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/*/      TITRE "Nos photographes"      /*/
+h1 {
+    color: #901C1C;
+    margin-right: 120px;
+}
+
+/*///////      LISTE DES PHOTOGRAPHES      ///////*/
 #photographers-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,6 +44,7 @@ h1 {
     margin-top: 100px;
 }
 
+/*/      PROFIL PHOTOGRAPHE      /*/
 #photographers-container article {
     justify-self: center;
     display: flex;
@@ -43,6 +53,7 @@ h1 {
     flex-direction: column;
 }
 
+/*/      IMAGE PROFIL PHOTOGRAPHE      /*/
 #photographers-container img {
     height: 240px;
     width: 240px;
@@ -54,6 +65,7 @@ a {
     text-decoration: none;
 }
 
+/*/      NOM PROFIL PHOTOGRAPHE      /*/
 .nom {
     color: #d3573c;
     font-size: 50px;
@@ -63,6 +75,7 @@ a {
     margin-top: 25px;
 }
 
+/*/      VILLE PROFIL PHOTOGRAPHE      /*/
 .ville {
     color: #901C1C;
     font-weight: 600;
@@ -70,6 +83,7 @@ a {
     margin-bottom: 2px;
 }
 
+/*/      DESCRIPTION PROFIL PHOTOGRAPHE     /*/
 .description {
     color: black;
     font-weight: 500;
@@ -77,6 +91,7 @@ a {
     margin-bottom: 5px;
 }
 
+/*/      PRIX PROFIL PHOTOGRAPHE      /*/
 .prix {
     color: #525252;
     font-size: 13px;
