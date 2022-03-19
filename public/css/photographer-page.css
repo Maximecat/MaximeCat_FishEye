@@ -2,9 +2,7 @@
     display: none;
 }
 
-
-/* Logo */
-
+/*/      LOGO      /*/
 .logo {
     height: 50px;
     margin-left: 100px;
@@ -12,17 +10,15 @@
     margin-bottom: 35px;
 }
 
-
-
-/* Banniére Photographe */
-
+/*///////      HEADER - BANNIERE      ///////*/
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    min-width: 1150px;
+    margin: 0 100px 0px;
 }
 
-/* Nom */
+/*/      NOM DU PHOTOGRAPHE      /*/
 .photograph-name {
     font-family: DM Sans;
     font-style: normal;
@@ -36,7 +32,7 @@
     padding-top: 60px;
 }
 
-/* Ville */
+/*/      VILLE DU PHOTOGRAPHE      /*/
 .photograph-city {
     font-family: DM Sans;
     font-style: normal;
@@ -49,7 +45,7 @@
     color: #901C1C;
 }
 
-/* Description */
+/*/      DESCRIPTION DU PHOTOGRAPHE      /*/
 .photograph-desc {
     font-family: DM Sans;
     font-style: normal;
@@ -61,7 +57,14 @@
     color: #525252;
 }
 
-/* Bouton "contact" to Modal */
+/*///////      BLOC DU BOUTON DE "CONTACT"      ///////*/
+.photograph-header-bloc-2 {
+    display: flex;
+    justify-content: center;
+    margin: -125px;
+}
+
+/*/      BOUTON "CONTACT"      /*/
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -73,27 +76,24 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    height: 69px;
-    left: 43.15%;
-    right: 43.15%;
-    top: 160px;
-    margin-top: 137px;
 }
 
-/* Photo de profil photographe */
+/*///////      BLOC DE L'IMAGE DU PHOTOGRAPHE      ///////*/
+.photograph-header-bloc-3 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+}
+
+/*/      IMAGE DU PHOTOGRAPHE      /*/
 .photograph-img {
-    position: absolute;
-    right: 152px;
-    top: 245px;
-    bottom: 54px;
     height: 180px;
     width: 180px;
     object-fit: cover;
     border-radius: 90px;
 }
 
-/* Menu Dropdown */
+/*/       TEXTE AVANT MENU DEROULANT "TRIER PAR"      /*/
 p {
     position: absolute;
     font-family: DM Sans;
@@ -107,13 +107,7 @@ p {
     color: #000000;
 }
 
-nav * {
-    margin: 0px;
-    padding: 0px;
-    padding-top: 4px;
-    padding-left: 5px;
-}
-
+/*///////      MENU DEROULANT      ///////*/
 nav {
     position: absolute;
     width: 140px;
@@ -125,16 +119,27 @@ nav {
     margin-top: 10px;
 }
 
+/*/      PLACEMENT DES ELEMENTS DU MENU      /*/
+nav * {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 4px;
+    padding-left: 5px;
+}
+
+/*/      PREMIER BLOC DU MENU     /*/
 .firstbloc {
     background-color: #911C1C;
     border-radius: 5px;
 }
 
+/*/      PREMIER CHOIX      /*/
 .firstchoice {
     list-style: none;
     padding-top: 8px;
 }
 
+/*/      LIEN PREMIER CHOIX      /*/
 .firstchoice a {
     font-family: DM Sans;
     font-style: normal;
@@ -143,22 +148,26 @@ nav {
     color: #FAFAFA;
 }
 
+/*/      ICON A DROITE DU PREMIER CHOIX      /*/
 .firstchoice i {
     padding: 2px 0px 4px 20px;
 }
 
+/*/      AU SURVOL DU PREMIER CHOIX -> MOUVEMENT DE L'ICON     /*/
 .firstchoice:hover i {
     transition: 0.5s;
     transform: rotateX(180deg);
     padding: 2px 0px 4px 20px;
 }
 
+/*/      DEUXIEME BLOC DU MENU (display: none)     /*/
 .secondbloc {
     display: none;
     border-radius: 5px;
     padding-top: 0px;
 }
 
+/*/      AU SURVOL DU PREMIER CHOIX, LE DEUXIEME BLOC DU MENU (display: block)      /*/
 .firstchoice:hover .secondbloc {
     display: block;
     font-family: DM Sans;
@@ -170,6 +179,7 @@ nav {
     margin-left: 0px;
 }
 
+/*/      DEUXIEME CHOIX      /*/
 .secondchoice {
     list-style: none;
     padding-top: 10px;
@@ -178,6 +188,7 @@ nav {
     padding-top: 25px;
 }
 
+/*/      TROISIEME CHOIX      /*/
 .thirdchoice {
     list-style: none;
     padding-left: 0px;
@@ -186,6 +197,7 @@ nav {
     padding-bottom: 15px;
 }
 
+/*/      INTERLIGNE BLANCHE ENTRE LES CHOIX      /*/
 .white-line {
     border-top: 1px solid white;
     position: absolute;
@@ -194,19 +206,28 @@ nav {
 }
 
 
-/* Medias du photographe */
+/*///////      MEDIAS DU PHOTOGRAPHE      ///////*/
 #photograph-medias {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 95px;
-    margin: 100px;
-    height: 700px;
+    gap: 40px;
+    margin: 95px;
 }
 
-.photograph-media {
+/*/      RESPONSIVE MEDIAS MOBIL-TABLETTE      /*/
+@media screen and (max-width: 395px) {
 
+    #photograph-medias {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin: 95px;
+        margin-left: 395px;
+        padding-left: 95px;
+    }
 }
 
+/*/      IMAGES PRODUITE PAR LE PHOTOGRAPHE      /*/
 .photograph-picture {
     display: flex;
     width: 350px;
@@ -216,6 +237,7 @@ nav {
     margin: auto;
 }
 
+/*/      A PROPOS DE L'IMAGE (TITRE/NOMBRE DE LIKES)     /*/
 .about-picture {
     display: flex;
     padding: 15px 5px 0px 5px;
@@ -224,6 +246,7 @@ nav {
     margin: auto;
 }
 
+/*/      TITRE DE L'IMAGE      /*/
 .picture-title {
     font-family: DM Sans;
     font-style: normal;
@@ -233,6 +256,7 @@ nav {
     color: #901C1C;
 }
 
+/*/      NOMBRE DE LIKES DE L'IMAGE      /*/
 .picture-likes {
     font-family: DM Sans;
     font-style: normal;
@@ -242,7 +266,7 @@ nav {
     color: #901C1C;
 }
 
-/* Modal */
+/*///////      MODALE      ///////*/
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -255,21 +279,25 @@ nav {
     margin: auto;
 }
 
+/*/      MODALE HEADER      /*/
 .modal header {
     justify-content: space-between;
     width: 100%;
 }
 
+/*/      MODALE BOUTON "CLOSE"      /*/
 .modal header img {
     cursor: pointer;
 }
 
+/*/      MODALE TEXTE "Contactez-moi"      /*/
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
     text-align: center;
 }
 
+/*///////      FORMULAIRE      ///////*/
 form {
     display: flex;
     width: 100%;
@@ -277,11 +305,7 @@ form {
     align-items: flex-start;
 }
 
-form label {
-    color: #312E2E;
-    font-size: 36px;
-}
-
+/*/      FORMULAIRE INFORMATION (LABEL+INPUT)      /*/
 form div {
     display: flex;
     flex-direction: column;
@@ -290,6 +314,13 @@ form div {
     margin-bottom: 26px;
 }
 
+/*/      FORMULAIRE LABEL      /*/
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+/*/      FORMULAIRE INPUT      /*/
 form input {
     width: 100%;
     height: 68px;
