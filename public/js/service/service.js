@@ -2,6 +2,7 @@ import { Photographer } from "../models/Photographer.js"
 import { Video } from "../models/Video.js"
 import { Image } from "../models/Image.js"
 
+// Fonction de récupération des photographes
 export function getPhotographers() {
     return fetch('public/datas/datas.json')
         .then(function(response) {
@@ -14,6 +15,7 @@ export function getPhotographers() {
         })
 }
 
+// Fonction de récupération d'un photographe
 export function getPhotographer(photographerId) {
     // Utiliser methode find
     return getPhotographers()
@@ -21,6 +23,7 @@ export function getPhotographer(photographerId) {
             .find((photographer) => photographer.id === Number(photographerId)))
 }
 
+// Fonction de récupération des medias
 export function getMedias(photographerId) {
 
     // Utiliser méthode filter
