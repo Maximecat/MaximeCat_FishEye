@@ -76,6 +76,7 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 /*///////      BLOC DE L'IMAGE DU PHOTOGRAPHE      ///////*/
@@ -264,6 +265,69 @@ nav * {
     font-size: 20px;
 
     color: #901C1C;
+}
+
+/*///////      LIGHTBOX-MODALE      ///////*/
+.lightbox-modal {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    padding-top: 65px;
+    justify-content: center;
+    background: white;
+}
+
+/*/      ICON CHEVRON GAUCHE      /*/
+.fa-chevron-left {
+    height: 750px;
+    margin-right: 35px;
+    font-size: 48px;
+    margin-top: 351px;
+    color: #911C1C;
+}
+
+/*/      IMAGE/MEDIA DE LA LIGHTBOX      /*/
+.picture-lightbox {
+    width: 900px;
+    height: 750px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+/*/      TITRE DU MEDIAS DE LA LIGHTBOX      /*/
+.title-picture-lightbox {
+    border: 1px solid black;
+    width: 20%;
+    margin: 0px;
+    margin-top: 10px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+}
+
+/*/      LES ICONS A DROITE (CROIX + CHEVRON)      /*/
+.icon-right-lightbox {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    margin-left: 35px;
+    font-size: 48px;
+}
+
+/*/      ICON CROIX DROITE (FERMETURE)      /*/
+.fa-xmark {
+    color: #911C1C;
+}
+
+/*/      ICON CHEVRON DROITE      /*/
+.fa-chevron-right {
+    color: #911C1C;
+    margin-top: 303px;
 }
 
 /*///////      MODALE      ///////*/
