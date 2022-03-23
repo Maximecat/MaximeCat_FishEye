@@ -41,7 +41,7 @@ export class MediaFactory {
 
         const lightBoxModal = document.getElementById("lightbox-modal");
 
-        lightBoxModal.style = ("display: flex");
+        lightBoxModal.style.display = ("flex");
         
         console.log("affiche la dialog");
     }
