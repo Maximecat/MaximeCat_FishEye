@@ -1,3 +1,6 @@
+import { Video } from "../models/Video.js"
+import { Image } from "../models/Image.js"
+
 export class MediaFactory {
 
     constructor(media){
@@ -8,8 +11,14 @@ export class MediaFactory {
     createMediaCard() {
         const photographMedia = document.createElement('div');
         photographMedia.className = "photograph-media";
-        const photographPicture = document.createElement('img');
+        let photographPicture;
+        if (this.media instanceof Image) {
+            photographPicture = document.createElement('img');
+        } else if (this.media instanceof Video) {
+            photographPicture = document.createElement('video');
+        }
         photographPicture.className = "photograph-picture";
+        photographPicture.alt = this.media.title;
         const aboutPicture = document.createElement('div');
         aboutPicture.className = "about-picture";
         const pictureTitle = document.createElement('div');
@@ -21,6 +30,7 @@ export class MediaFactory {
 
 
         photographPicture.src = "/public/images/" + this.media.photographerId + "/" + (this.media.image|| this.media.video)
+        photographPicture.id = "thumb-" + this.media.id;
         pictureTitle.innerText = this.media.title;
         pictureLikes.innerText = this.media.likes + " ";
 
@@ -31,7 +41,9 @@ export class MediaFactory {
         photographMedia.appendChild(photographPicture);
         photographMedia.appendChild(aboutPicture);
 
-        photographPicture.addEventListener('click', this.displayDialog);
+        photographPicture.addEventListener('click', () => {
+            this.displayDialog();
+        });
 
         return photographMedia;
     }
@@ -40,9 +52,27 @@ export class MediaFactory {
     displayDialog() {
 
         const lightBoxModal = document.getElementById("lightbox-modal");
+        lightBoxModal.style.display = "flex";
 
-        lightBoxModal.style.display = ("flex");
+        const mediaContainerLightBox = document.getElementById("media-container-lightbox");
+        mediaContainerLightBox.innerHTML = null;
+        let mediaToDisplay;
+        if (this.media instanceof Image) {
+            mediaToDisplay = document.createElement('img');
+            mediaToDisplay.src = "/public/images/" + this.media.photographerId + "/" + this.media.image;
+        } else if (this.media instanceof Video) {
+            mediaToDisplay = document.createElement('video');
+            mediaToDisplay.controls = true;
+            const videoSource = document.createElement('source');
+            videoSource.src = "/public/images/" + this.media.photographerId + "/" + this.media.video;
+            mediaToDisplay.appendChild(videoSource);
+        }
         
-        console.log("affiche la dialog");
+        mediaToDisplay.id = this.media.id;
+        mediaToDisplay.classList.add("picture-lightbox");
+        mediaContainerLightBox.appendChild(mediaToDisplay);
+
+        const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
+        titlePictureLightBox[0].innerText = this.media.title;
     }
 }
