@@ -1,7 +1,3 @@
-#contact_modal {
-    display: none;
-}
-
 /*/      LOGO      /*/
 .logo {
     height: 50px;
@@ -77,6 +73,11 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.contact_button:hover {
+    color: #000000;
+    background-color: #D3573C;
 }
 
 /*///////      BLOC DE L'IMAGE DU PHOTOGRAPHE      ///////*/
@@ -292,14 +293,13 @@ nav * {
 .picture-lightbox {
     width: 900px;
     height: 750px;
+    object-fit: cover;
     border-radius: 5px;
-    border: 1px solid black;
 }
 
 /*/      TITRE DU MEDIAS DE LA LIGHTBOX      /*/
 .title-picture-lightbox {
-    border: 1px solid black;
-    width: 20%;
+    width: 50%;
     margin: 0px;
     margin-top: 10px;
     font-family: 'DM Sans';
@@ -330,16 +330,30 @@ nav * {
     margin-top: 303px;
 }
 
-/*///////      MODALE      ///////*/
+/*///////      MODALE FORM      ///////*/
+#contact_modal {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    padding-top: 65px;
+    padding-bottom: 50px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
+    padding-top: 20px;
     margin: auto;
 }
 
@@ -347,18 +361,24 @@ nav * {
 .modal header {
     justify-content: space-between;
     width: 100%;
+    display: flex;
 }
 
 /*/      MODALE BOUTON "CLOSE"      /*/
 .modal header img {
     cursor: pointer;
+    height: fit-content;
+    padding-top: 15px;
 }
 
 /*/      MODALE TEXTE "Contactez-moi"      /*/
 .modal header h2 {
-    font-size: 64px;
+    font-size: 54px;
+    font-family: DM Sans;
+    font-style: normal;
     font-weight: normal;
     text-align: center;
+    margin-top: 0;
 }
 
 /*///////      FORMULAIRE      ///////*/
@@ -381,13 +401,49 @@ form div {
 /*/      FORMULAIRE LABEL      /*/
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 25px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 /*/      FORMULAIRE INPUT      /*/
 form input {
     width: 100%;
-    height: 68px;
+    height: 50px;
     border: none;
     border-radius: 5px;
+    font-family: DM Sans;
+    font-size: 25px;
+    margin-left: -10px;
+    padding-left: 15px;
 }
+
+form .input-message {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.formData[data-error]::after {
+    content: attr(data-error);
+    color: white;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: right;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .formData[data-error-visible="true"]::after {
+    opacity: 1;
+  }
+  .formData[data-error-visible="true"] .text-control {
+    border: 2px solid red;
+  }
+  
+  .formData[valid] .text-control{
+    border: 2px solid #36b146;
+  }
