@@ -395,7 +395,6 @@ form div {
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
 }
 
 /*/      FORMULAIRE LABEL      /*/
@@ -431,10 +430,7 @@ form .input-message {
     color: white;
     display: block;
     margin-top: 7px;
-    margin-bottom: 7px;
     text-align: right;
-    line-height: 0.3;
-    opacity: 0;
     transition: 0.3s;
   }
   .formData[data-error-visible="true"]::after {
