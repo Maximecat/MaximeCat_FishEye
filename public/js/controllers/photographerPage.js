@@ -1,8 +1,8 @@
 import { MediaFactory } from "../service/MediaFactory.js";
 import { PhotographerFactory } from "../service/PhotographerFactory.js";
 import { getPhotographer, getMedias } from "../service/service.js";
-import { Video } from "../models/Video.js"
-import { Image } from "../models/Image.js"
+import { Video } from "../models/Video.js";
+import { Image } from "../models/Image.js";
 
 let medias = [];
 
@@ -132,6 +132,8 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
 function displayModalForm() {
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
+  // const nameProfil = document.getElementById('name-profil');
+  // nameProfil.innerText = this.photographer.name;
 }
 
 function closeModalForm() {
