@@ -37,7 +37,7 @@ getPhotographer(photographerId)
   })
 
 // Fonction de récupération des médias ( du photographe par son numéro d'identifiant "Id"), 
-// une fois fais on appel la fonction 'displayMedias' qui parcourir la liste des medias et les affiche dans notre div (en dynamique)
+// une fois fais on appel la fonction 'displayMedias' qui parcours la liste des medias et les affiche dans notre div (en dynamique)
 getMedias(photographerId)
   .then(displayMedias)
 
@@ -129,11 +129,13 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
   }
 }
 
-function displayModalForm() {
+function displayModalForm(photographer) {
+
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
-  // const nameProfil = document.getElementById('name-profil');
-  // nameProfil.innerText = this.photographer.name;
+
+  const nameProfil = document.getElementById('name-profil');
+  nameProfil.innerText = photographer.name;
 }
 
 function closeModalForm() {
