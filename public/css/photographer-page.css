@@ -78,6 +78,7 @@
 .contact_button:hover {
     color: #000000;
     background-color: #D3573C;
+    transition: 0.3s;
 }
 
 /*///////      BLOC DE L'IMAGE DU PHOTOGRAPHE      ///////*/
@@ -373,12 +374,21 @@ nav * {
 
 /*/      MODALE TEXTE "Contactez-moi"      /*/
 .modal header h2 {
-    font-size: 54px;
+    font-size: 50px;
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
+}
+
+#name-profil {
+    font-size: 50px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
 
 /*///////      FORMULAIRE      ///////*/
@@ -406,6 +416,7 @@ form label {
     font-weight: normal;
     padding-top: 10px;
     padding-bottom: 5px;
+    margin-left: -10px;
 }
 
 /*/      FORMULAIRE INPUT      /*/
@@ -421,8 +432,14 @@ form input {
 }
 
 form .input-message {
-    width: 100%;
+    font-size: 25px;
+    font-family: DM Sans;
+    width: 101%;
     padding-bottom: 100px;
+    border-radius: 5px;
+    margin-left: -10px;
+    padding-left: 15px;
+    padding-top: 10px;
 }
 
 .formData[data-error]::after {
