@@ -34,6 +34,9 @@ getPhotographer(photographerId)
     // Création du header pour le photographe
     //( à partir du model dans notre "class" -> 'PhotographerFactory' de la méthode createPhotographerHeader() )
     photographerFactory.createPhotographerHeader();
+    
+    const contactButton = document.getElementById('btn-contact');
+    contactButton.addEventListener('click', () => displayModalForm(photographer));
   })
 
 // Fonction de récupération des médias ( du photographe par son numéro d'identifiant "Id"), 
@@ -60,9 +63,6 @@ function displayMedias(mediasFromFetch) {
 
   }
 }
-
-const contactButton = document.getElementById('btn-contact');
-contactButton.addEventListener('click', displayModalForm);
 
 const closeFormButton = document.getElementById('close-img-button');
 closeFormButton.addEventListener('click', closeModalForm);
