@@ -37,6 +37,10 @@ getPhotographer(photographerId)
     
     const contactButton = document.getElementById('btn-contact');
     contactButton.addEventListener('click', () => displayModalForm(photographer));
+
+    const photographerPrice = document.getElementById('price-banner');
+    photographerPrice.innerText = photographer.price + "€ / jour";
+    
   })
 
 // Fonction de récupération des médias ( du photographe par son numéro d'identifiant "Id"), 
@@ -61,7 +65,7 @@ function displayMedias(mediasFromFetch) {
     // ( à partir du model dans notre "class" -> 'MediaFactory' de la méthode createMediaCard() )
     photographMedias.appendChild(mediaFactory.createMediaCard());
 
-  }
+  }  
 }
 
 const closeFormButton = document.getElementById('close-img-button');
