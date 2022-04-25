@@ -269,6 +269,57 @@ nav * {
     color: #901C1C;
 }
 
+/*///////      LIKES-BANNER      ///////*/
+
+#likes-banner {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    float: right;
+    width: 320px;
+    height: 60px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: black;
+    background-color: #DB8876;
+}
+
+#banner-display {
+    display: flex;
+}
+
+#like-counter-banner {
+    display: flex;
+    width: 50%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+#total-likes {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    margin-right: 5px;
+}
+
+#price-photograph-banner {
+    display: flex;
+    width: 50%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+#price-banner {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    padding-right: 5px;
+}
+
 /*///////      LIGHTBOX-MODALE      ///////*/
 #lightbox-modal {
     width: 100%;
