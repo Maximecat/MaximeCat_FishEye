@@ -40,7 +40,7 @@ getPhotographer(photographerId)
 
     const photographerPrice = document.getElementById('price-banner');
     photographerPrice.innerText = photographer.price + "€ / jour";
-    
+
   })
 
 // Fonction de récupération des médias ( du photographe par son numéro d'identifiant "Id"), 
@@ -65,8 +65,21 @@ function displayMedias(mediasFromFetch) {
     // ( à partir du model dans notre "class" -> 'MediaFactory' de la méthode createMediaCard() )
     photographMedias.appendChild(mediaFactory.createMediaCard());
 
-  }  
+  }
+
+  function displayTotalLikes(medias) {
+
+    const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
+    return monRes;
+
+  }
+  
+  const totalLikes = document.getElementById('total-likes');
+  totalLikes.innerText = displayTotalLikes(medias);
 }
+
+
+//--------------------------------------------------------------------------
 
 const closeFormButton = document.getElementById('close-img-button');
 closeFormButton.addEventListener('click', closeModalForm);
