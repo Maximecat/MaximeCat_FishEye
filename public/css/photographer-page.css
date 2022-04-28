@@ -269,6 +269,10 @@ nav * {
     color: #901C1C;
 }
 
+.like-margin {
+    margin-right: 5px;
+}
+
 /*///////      LIKES-BANNER      ///////*/
 
 #likes-banner {
