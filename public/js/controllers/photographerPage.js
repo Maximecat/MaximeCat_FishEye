@@ -5,6 +5,7 @@ import { Video } from "../models/Video.js";
 import { Image } from "../models/Image.js";
 
 let medias = [];
+const mediaLikes = [];
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
@@ -67,15 +68,48 @@ function displayMedias(mediasFromFetch) {
 
   }
 
-  function displayTotalLikes(medias) {
+  displayTotalLikes();
 
-    const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
-    return monRes;
-
+  const divsLikes = document.getElementsByClassName('like-icon');
+  for (const divLikes of divsLikes) {
+    divLikes.addEventListener('click', switchLikes);
   }
-  
+
+}
+
+function displayTotalLikes() {
+  const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
   const totalLikes = document.getElementById('total-likes');
-  totalLikes.innerText = displayTotalLikes(medias);
+  totalLikes.innerText = monRes;
+
+}
+
+function switchLikes(event) {
+  console.log(mediaLikes);
+  const likeId = event.target.id;
+  const mediaId = likeId.split('heart-likes-')[1];
+  let indexToDelete = -1;
+  for (let i = 0, len = mediaLikes.length; i < len; i++) {
+    if(mediaId === mediaLikes[i]) {
+      indexToDelete = i;
+      break;
+    }
+  }
+  if(indexToDelete > -1) {
+    mediaLikes.splice(indexToDelete, 1);
+  }
+  for (const media of medias) {
+    if (media.id == mediaId) {
+      media.likes += indexToDelete > -1 ? -1 : 1;
+      const pictureLikes = document.getElementById('likes-' + mediaId);
+      pictureLikes.innerText = media.likes;
+      if (indexToDelete === -1) {
+        mediaLikes.push(mediaId);
+      }
+      break;
+    }
+  }
+  displayTotalLikes();
 }
 
 
@@ -171,6 +205,7 @@ function goRight() {
   // Récupération des emplacements d'affichage
   const pictureLightBox = document.getElementsByClassName("picture-lightbox");
   const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
+  const mediaContainer = document.getElementById('media-container-lightbox');
   // Récupération de l'élément courant
   const index = medias.findIndex(function (media) {
     return media.id == pictureLightBox[0].id;
@@ -186,17 +221,23 @@ function goRight() {
     nextIndex = index + 1;
   }
 
+  const mediaFactory = new MediaFactory(medias[nextIndex]);
+
   if (medias[index] instanceof Image) {
     if (medias[nextIndex] instanceof Image) {
       pictureLightBox[0].src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
     } else {
-      console.log("le prochain media es une vidéo")
+      mediaContainer.innerHTML = '';
+      const videoElement = mediaFactory.createVideo();
+      mediaContainer.appendChild(videoElement);
     }
   } else if (medias[index] instanceof Video) {
     if (medias[nextIndex] instanceof Video) {
       pictureLightBox[0].firstChild().src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
     } else {
-      console.log("le prochain media es une photo")
+      mediaContainer.innerHTML = '';
+      const photoElement = mediaFactory.createPhoto();
+      mediaContainer.appendChild(photoElement);
     }
   }
   //
@@ -209,6 +250,8 @@ function goLeft() {
 
   const pictureLightBox = document.getElementsByClassName("picture-lightbox");
   const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
+  const mediaContainer = document.getElementById('media-container-lightbox');
+  
   const index = medias.findIndex(function (media) {
     return media.id == pictureLightBox[0].id;
   })
@@ -220,17 +263,23 @@ function goLeft() {
     nextIndex = index - 1;
   }
 
+  const mediaFactory = new MediaFactory(medias[nextIndex]);
+
   if (medias[index] instanceof Image) {
     if (medias[nextIndex] instanceof Image) {
       pictureLightBox[0].src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
     } else {
-      console.log("le prochain media es une vidéo")
+      mediaContainer.innerHTML = '';
+      const videoElement = mediaFactory.createVideo();
+      mediaContainer.appendChild(videoElement);
     }
   } else if (medias[index] instanceof Video) {
     if (medias[nextIndex] instanceof Video) {
       pictureLightBox[0].firstChild().src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
     } else {
-      console.log("le prochain media es une photo")
+      mediaContainer.innerHTML = '';
+      const photoElement = mediaFactory.createPhoto();
+      mediaContainer.appendChild(photoElement);
     }
   }
 
