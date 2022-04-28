@@ -25,18 +25,23 @@ export class MediaFactory {
         pictureTitle.className = "picture-title";
         const pictureLikes = document.createElement('div');
         pictureLikes.className = "picture-likes";
+        const likes = document.createElement('span');
+        likes.id = "likes-" + this.media.id;
+        likes.className = 'like-margin';
         const heartLikes = document.createElement('i');
-        heartLikes.className = "fa-solid fa-heart";
+        heartLikes.className = "fa-solid fa-heart like-icon";
+        heartLikes.id = "heart-likes-" + this.media.id;
 
 
         photographPicture.src = "/public/images/" + this.media.photographerId + "/" + (this.media.image|| this.media.video)
         photographPicture.id = "thumb-" + this.media.id;
         pictureTitle.innerText = this.media.title;
-        pictureLikes.innerText = this.media.likes + " ";
+        likes.innerText = this.media.likes;
 
 
         aboutPicture.appendChild(pictureTitle);
         aboutPicture.appendChild(pictureLikes);
+        pictureLikes.appendChild(likes);
         pictureLikes.appendChild(heartLikes);
         photographMedia.appendChild(photographPicture);
         photographMedia.appendChild(aboutPicture);
@@ -58,21 +63,33 @@ export class MediaFactory {
         mediaContainerLightBox.innerHTML = null;
         let mediaToDisplay;
         if (this.media instanceof Image) {
-            mediaToDisplay = document.createElement('img');
-            mediaToDisplay.src = "/public/images/" + this.media.photographerId + "/" + this.media.image;
+            mediaToDisplay = this.createPhoto();
         } else if (this.media instanceof Video) {
-            mediaToDisplay = document.createElement('video');
-            mediaToDisplay.controls = true;
-            const videoSource = document.createElement('source');
-            videoSource.src = "/public/images/" + this.media.photographerId + "/" + this.media.video;
-            mediaToDisplay.appendChild(videoSource);
+            mediaToDisplay = this.createVideo();
         }
         
-        mediaToDisplay.id = this.media.id;
-        mediaToDisplay.classList.add("picture-lightbox");
         mediaContainerLightBox.appendChild(mediaToDisplay);
 
         const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
         titlePictureLightBox[0].innerText = this.media.title;
+    }
+
+    createPhoto() {
+        const mediaToDisplay = document.createElement('img');
+        mediaToDisplay.src = "/public/images/" + this.media.photographerId + "/" + this.media.image;
+        mediaToDisplay.id = this.media.id;
+        mediaToDisplay.classList.add("picture-lightbox");
+        return mediaToDisplay;
+    }
+
+    createVideo() {
+        const mediaToDisplay = document.createElement('video');
+        mediaToDisplay.controls = true;
+        const videoSource = document.createElement('source');
+        videoSource.src = "/public/images/" + this.media.photographerId + "/" + this.media.video;
+        mediaToDisplay.appendChild(videoSource);
+        mediaToDisplay.id = this.media.id;
+        mediaToDisplay.classList.add("picture-lightbox");
+        return mediaToDisplay;
     }
 }
