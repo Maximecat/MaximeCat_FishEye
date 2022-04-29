@@ -2,10 +2,10 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    margin: 0;
+    margin: auto;
     margin-bottom: 120px;
     margin-left: 100px;
-    margin-right: 100px;
+    margin-right: 120px;
 }
 
 /*///////      HEADER      ///////*/
@@ -33,14 +33,13 @@ header {
 /*/      TITRE "Nos photographes"      /*/
 h1 {
     color: #901C1C;
-    margin-right: 120px;
+    margin-right: 80px;
 }
 
 /*///////      LISTE DES PHOTOGRAPHES      ///////*/
 #photographers-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 80px;
     margin-top: 100px;
 }
 
@@ -51,6 +50,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 /*/      IMAGE PROFIL PHOTOGRAPHE      /*/
@@ -68,7 +68,7 @@ a {
 /*/      NOM PROFIL PHOTOGRAPHE      /*/
 .nom {
     color: #d3573c;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
     text-decoration: none;
     margin: 0;
@@ -100,4 +100,119 @@ a {
     font-size: 13px;
     margin-bottom: 5px;
     text-align: center;
+}
+
+@media screen and (max-device-width: 1200px) {
+    body {
+        width: 100%;
+        margin: auto;
+        max-width: 1200px;
+        min-width: 768px;
+    }
+
+    .logo {
+        margin-left: 90px;
+    }
+
+    #photographers-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 100px;
+        margin-bottom: 80px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .nom {
+        width: 375px;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-device-width: 768px) {
+
+    .logo {
+        margin-right: auto;
+        margin-bottom: 10px;
+        height: 47px;
+    }
+
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+        padding-top: 30px;
+    }
+
+    #photographers-container {
+        grid-template-columns: 1fr;
+    }
+
+    #photographers-container img {
+        height: 350px;
+        width: 350px;
+        object-fit: cover;
+        border-radius: 175px;
+        margin-top: 50px;
+    }
+
+    .nom {
+        width: 100%;
+        font-size: 47px;
+    }
+
+    .ville {
+        font-size: 22px;
+    }
+    
+    .description {
+        font-size: 20px;
+    }
+    
+    .prix {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-device-width: 375px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-left: auto;
+        margin-top: 100px;
+        block-size: 7em;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    #photographers-container img {
+        height: 440px;
+        width: 440px;
+        object-fit: cover;
+        border-radius: 220px;
+        margin-top: 60px;
+    }
+
+    .nom {
+        width: 100%;
+        font-size: 65px;
+    }
+
+    .ville {
+        font-size: 30px;
+    }
+    
+    .description {
+        font-size: 25px;
+    }
+    
+    .prix {
+        font-size: 26px;
+    }
+    
 }
