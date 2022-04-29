@@ -217,18 +217,7 @@ nav * {
     margin: 95px;
 }
 
-/*/      RESPONSIVE MEDIAS MOBIL-TABLETTE      /*/
-@media screen and (max-width: 395px) {
 
-    #photograph-medias {
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-        margin: 95px;
-        margin-left: 395px;
-        padding-left: 95px;
-    }
-}
 
 /*/      IMAGES PRODUITE PAR LE PHOTOGRAPHE      /*/
 .photograph-picture {
@@ -515,3 +504,22 @@ form .input-message {
   .formData[valid] .text-control{
     border: 2px solid #36b146;
   }
+
+  
+
+/*/--------------------------------------------------------------------------/*/
+
+
+
+  /*/      RESPONSIVE MEDIAS MOBIL-TABLETTE      /*/
+@media screen and (max-width: 395px) {
+
+    #photograph-medias {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin: 95px;
+        margin-left: 395px;
+        padding-left: 95px;
+    }
+}
