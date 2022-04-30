@@ -250,11 +250,11 @@ nav * {
 
 /*/      NOMBRE DE LIKES DE L'IMAGE      /*/
 .picture-likes {
+    width: 58px;
     font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-
     color: #901C1C;
 }
 
@@ -295,6 +295,10 @@ nav * {
     font-weight: 600;
     font-size: 21px;
     margin-right: 5px;
+}
+
+.like-icon-banner {
+    font-size: 20px;  
 }
 
 #price-photograph-banner {
@@ -512,14 +516,528 @@ form .input-message {
 
 
   /*/      RESPONSIVE MEDIAS MOBIL-TABLETTE      /*/
-@media screen and (max-width: 395px) {
+
+
+@media screen and (max-device-width: 1024px) {
+
+    .logo {
+        block-size: 4em;
+    }
+
+    .photograph-img {
+        height: 240px;
+        width: 240px;
+        border-radius: 120px;
+        margin-top: -52px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: 45px;
+    }
+
+    nav {
+        width: 155px;
+        height: 50px;
+        margin-top: 35px;
+    }
+
+    .firstchoice a {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    #photograph-medias {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 150px;
+        margin-top: 120px;
+    }
+
+    .photograph-media {
+        margin-right: 100px;
+        margin-bottom: 30px;
+    }
+
+    .photograph-picture {
+        width: 450px;
+        height: 400px;
+    }
+
+    .about-picture {
+        padding: 5px 5px 0px 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: auto;
+    }
+
+    .picture-title {
+        font-size: 25px;
+    }
+
+    .picture-likes {
+        font-size: 25px;
+        width: 71px;
+        margin-right: -10px;
+    }
+
+    #likes-banner {
+        width: 360px;
+        height: 70px;
+    }
+
+    #banner-display {
+        margin-top: 5px;
+    }
+
+    #total-likes {
+        font-size: 26px;
+        margin-right: 7px;
+    }
+
+    .like-icon-banner {
+        font-size: 24px;  
+    }
+
+    #price-banner {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    #lightbox-modal {
+        padding-top: 0px;
+        align-items: center;
+    }
+
+    #left {
+        height: 30px;
+        margin-top: 0px;
+    }
+
+    #right {
+        margin-top: 305px;
+    }
+
+    .title-picture-lightbox {
+        font-size: 29px;
+    }
+}
+
+@media screen and (max-device-width: 768px) {
+    .photograph-header {
+        height: 390px;
+    }
+
+    .photograph-name {
+        font-size: 80px;
+    }
+
+    .photograph-city {
+        font-size: 33px;
+    }
+
+    .photograph-desc {
+        font-size: 23px;
+    }
+
+    .photograph-header-bloc-2 {
+        display: block;
+        margin-top: -116px;
+        margin-left: 50px;
+    }
+
+    #btn-contact {
+        margin-top: 130px;
+    }
+
+    .photograph-img {
+        height: 300px;
+        width: 300px;
+        border-radius: 150px;
+        margin-top: -174px;
+    }
+
+    p {
+        font-size: 28px;
+        margin-top: 50px;
+    }
+
+    nav {
+        width: 190px;
+        height: 57px;
+        margin-left: 234px;
+        margin-top: 36px;
+    }
+
+    .firstchoice a {
+        font-size: 22px;
+        margin-left: 10px;
+    }
+
+    .white-line {
+        width: 140px;
+        margin-top: 14px;
+        margin-left: 10px;
+    }
+
+    #photograph-medias {
+        margin-left: 104px;
+        margin-top: 130px;
+    }
+
+    .photograph-media {
+        margin-bottom: 50px;
+    }
+
+    .photograph-picture {
+        width: 500px;
+        height: 450px;
+    }
+
+    .about-picture {
+        padding: 10px 5px 0px 5px;
+    }
+
+    .picture-title {
+        font-size: 30px;
+    }
+
+    .picture-likes {
+        width: 85px;
+        font-size: 30px;
+        margin-right: -10px;
+    }
+
+    #likes-banner {
+        width: 450px;
+        height: 85px;
+    }
+
+    #banner-display {
+        margin-top: 14px;
+    }
+
+    #total-likes {
+        font-size: 32px;
+        margin-right: 10px;
+    }
+
+    .like-icon-banner {
+        font-size: 28px;
+    }
+
+    #price-banner {
+        font-size: 32px;
+        padding-right: 32px;
+    }
+
+    .picture-lightbox {
+        width: 1100px;
+        height: 950px;
+    }
+
+    .title-picture-lightbox {
+        font-size: 36px;
+    }
+
+    .icon-right-lightbox {
+        height: 950px;
+    }
+
+    #right {
+        margin-top: 405px;
+    }
+
+    .modal {
+        width: 60%;
+    }
+
+    .modal header h2 {
+        font-size: 65px;
+    }
+
+    #name-profil {
+        font-size: 65px;
+    }
+
+    form {
+        height: auto;
+    }
+
+    form label {
+        font-size: 32px;
+        padding-top: 17px;
+    }
+
+    form input {
+        height: 80px;
+        font-size: 30px;
+    }
+
+    form .input-message {
+        width: 100%;
+        height: 140px;
+        font-size: 30px;
+    }
+
+    .formData {
+        font-size: 25px;
+    }
+
+    .contact_button {
+        margin-top: 30px;
+        margin-left: -8px;
+    }
+
+
+}
+
+@media screen and (max-device-width: 375px) {
+
+    .logo {
+        block-size: 7em;
+        margin-left: 455px;
+        margin-top: 75px;
+        margin-bottom: 70px;
+    }
+
+    .photograph-header {
+        height: 1100px;
+    }
+
+    .photograph-header-bloc-1 {
+        padding-top: 490px;
+    }
+
+    .photograph-name {
+        display: flex;
+        place-content: center;
+        margin-left: auto;
+        font-size: 105px;
+    }
+
+    .photograph-city {
+        display: flex;
+        place-content: center;
+        font-size: 53px;
+        margin-left: auto;
+    }
+
+    .photograph-desc {
+        display: flex;
+        place-content: center;
+        font-size: 41px;
+        margin-left: auto;
+    }
+
+    .photograph-header-bloc-2 {
+        display: flex;
+        margin-top: -116px;
+        margin-right: -105px;
+        margin-left: 0px;
+    }
+
+    #btn-contact {
+        margin-top: 151px;
+        block-size: 3em;
+        width: 370px;
+        font-size: 40px;
+        margin-left: -112px;
+    }
+
+    .photograph-header-bloc-3 {
+        margin-right: 318px;
+        margin-top: -640px;
+    }
+
+    .photograph-img {
+        height: 500px;
+        width: 500px;
+        border-radius: 250px;
+        margin-top: -325px;
+    }
+
+    p {
+        font-size: 55px;
+        margin-top: 120px;
+    }
+
+    nav {
+        margin-left: 350px;
+        width: 347px;
+        height: 110px;
+        margin-top: 80px;
+    }
+
+    .firstchoice {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .firstchoice a {
+        font-size: 45px;
+        margin-left: 17px;
+    }
+    
+    .fa-chevron-down {
+        padding-left: 35px;
+    }
+
+    .white-line {
+        margin-top: 29px;
+        margin-left: 20px;
+        width: 225px;
+    }
+
+    .secondchoice {
+        padding-top: 53px;
+    }
+
+    .secondchoice a {
+        font-size: 45px;
+        margin-left: 17px;
+    }
+
+    .thirdchoice {
+        padding-top: 55px;
+        padding-bottom: 0px;
+    }
+
+    .thirdchoice a {
+        font-size: 45px;
+        margin-left: 17px;
+    }
 
     #photograph-medias {
         display: flex;
         flex-direction: column;
-        gap: 60px;
-        margin: 95px;
-        margin-left: 395px;
-        padding-left: 95px;
+        margin-top: 270px;
+    }
+
+    .photograph-media {
+        margin-bottom: 120px;
+    }
+
+    .photograph-picture {
+        width: 1135px;
+        height: 1085px;
+    }
+
+    .about-picture {
+        width: 1130px;
+        padding-top: 20px;
+    }
+
+    .picture-title {
+        font-size: 60px;
+    }
+
+    .picture-likes {
+        width: 167px;
+        font-size: 60px;
+        margin-right: -5px;
+    }
+
+    .like-margin {
+        margin-right: 10px;
+    }
+
+    #likes-banner {
+        width: 760px;
+        height: 142px;
+        right: 60px;
+    }
+
+    #banner-display {
+        margin-top: 42px;
+    }
+
+    #total-likes {
+        font-size: 60px;
+        margin-left: -30px;
+        margin-right: 15px;
+    }
+
+    .like-icon-banner {
+        font-size: 60px;
+    }
+
+    #price-banner {
+        font-size: 60px;
+        padding-right: 50px;
+    }
+
+    .title-picture-lightbox {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    #left {
+        font-size: 6em;
+        margin-right: 30px;
+        margin-left: -10px;
+    }
+
+    .icon-right-lightbox {
+        margin-left: 30px;
+    }
+
+    #close-button {
+        font-size: 2em;
+    }
+
+    #right {
+        font-size: 2em;
+        margin-top: 343px;
+    }
+
+    .modal {
+        height: auto;
+        width: 85%;
+    }
+
+    .modal header h2 {
+        font-size: 110px;
+    }
+
+    #name-profil {
+        font-size: 110px;
+    }
+
+    #close-img-button {
+        block-size: 4em;
+    }
+
+    #contact_form {
+        height: auto;
+    }
+
+    .formData {
+        padding-left: 27px;
+        font-size: 41px;
+    }
+
+    form label {
+        font-size: 60px;
+    }
+
+    form input {
+        width: 95%;
+        height: 125px;
+        font-size: 50px;
+    }
+
+    form .input-message {
+        width: 95%;
+        height: 280px;
+        font-size: 50px;
+    }
+
+    .contact_button {
+        width: 325px;
+        height: 120px;
+        font-size: 40px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        margin-left: 20px;
     }
 }
