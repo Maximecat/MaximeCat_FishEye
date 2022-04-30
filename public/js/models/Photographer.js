@@ -16,4 +16,5 @@ export class Photographer {
         this.price = photographeDatas.price;
         this.portrait = photographeDatas.portrait;
     }
+    
 }
