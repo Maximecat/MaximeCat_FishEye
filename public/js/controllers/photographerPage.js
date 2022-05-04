@@ -18,13 +18,11 @@ console.log(photographerId);
 const xmarkIcon = document.getElementById('close-button');
 xmarkIcon.addEventListener('click', closeModal);
 
-// Icon fleche de droite
 const right = document.getElementById('right');
-right.addEventListener('click', goRight);
+right.addEventListener('click', () => nextMedia('right'));
 
-// Icon fleche de gauche
 const left = document.getElementById('left');
-left.addEventListener('click', goLeft);
+left.addEventListener('click', () => nextMedia('left'));
 
 // Fonction de récupération du photographe (par son numéro d'identifiant "Id")
 getPhotographer(photographerId)
@@ -35,7 +33,7 @@ getPhotographer(photographerId)
     // Création du header pour le photographe
     //( à partir du model dans notre "class" -> 'PhotographerFactory' de la méthode createPhotographerHeader() )
     photographerFactory.createPhotographerHeader();
-    
+
     const contactButton = document.getElementById('btn-contact');
     contactButton.addEventListener('click', () => displayModalForm(photographer));
 
@@ -90,12 +88,12 @@ function switchLikes(event) {
   const mediaId = likeId.split('heart-likes-')[1];
   let indexToDelete = -1;
   for (let i = 0, len = mediaLikes.length; i < len; i++) {
-    if(mediaId === mediaLikes[i]) {
+    if (mediaId === mediaLikes[i]) {
       indexToDelete = i;
       break;
     }
   }
-  if(indexToDelete > -1) {
+  if (indexToDelete > -1) {
     mediaLikes.splice(indexToDelete, 1);
   }
   for (const media of medias) {
@@ -110,8 +108,8 @@ function switchLikes(event) {
     }
   }
   displayTotalLikes();
-}
 
+}
 
 //--------------------------------------------------------------------------
 
@@ -156,16 +154,16 @@ function onSubmitContactForm(event) {
   }
 
   if (
-    inputsConf.prenom.isValid && 
-    inputsConf.nom.isValid && 
-    inputsConf.email.isValid && 
-    inputsConf.message.isValid 
-    ) {
-      console.log("prenom: " + inputsConf.prenom.input.value)
-      console.log("nom: " + inputsConf.nom.input.value)
-      console.log("email: " + inputsConf.email.input.value)
-      console.log("message: " + inputsConf.message.input.value)
-    }
+    inputsConf.prenom.isValid &&
+    inputsConf.nom.isValid &&
+    inputsConf.email.isValid &&
+    inputsConf.message.isValid
+  ) {
+    console.log("prenom: " + inputsConf.prenom.input.value)
+    console.log("nom: " + inputsConf.nom.input.value)
+    console.log("email: " + inputsConf.email.input.value)
+    console.log("message: " + inputsConf.message.input.value)
+  }
 }
 
 function displayIsValidInput(isValid, inputElement, errorMessage) {
@@ -200,67 +198,30 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-// Fonction pour parcourir nôtre tableau de medias propre au photographe et les faire apparaître dans la 'lightbox-modal'
-function goRight() {
-  // Récupération des emplacements d'affichage
+function nextMedia(direction) {
+
   const pictureLightBox = document.getElementsByClassName("picture-lightbox");
   const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
   const mediaContainer = document.getElementById('media-container-lightbox');
-  // Récupération de l'élément courant
+
   const index = medias.findIndex(function (media) {
     return media.id == pictureLightBox[0].id;
   })
 
   let nextIndex;
-  // Si (l'élement courant = la longueur du tableau 'medias' - 1)
-  // Retour a l'index 0 de notre tableau
-  if (index === medias.length - 1) {
-    nextIndex = 0;
-    // Sinon avancer dans le tableau
-  } else {
-    nextIndex = index + 1;
-  }
 
-  const mediaFactory = new MediaFactory(medias[nextIndex]);
-
-  if (medias[index] instanceof Image) {
-    if (medias[nextIndex] instanceof Image) {
-      pictureLightBox[0].src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
+  if (direction === 'right') {
+    if (index === medias.length - 1) {
+      nextIndex = 0;
     } else {
-      mediaContainer.innerHTML = '';
-      const videoElement = mediaFactory.createVideo();
-      mediaContainer.appendChild(videoElement);
+      nextIndex = index + 1;
     }
-  } else if (medias[index] instanceof Video) {
-    if (medias[nextIndex] instanceof Video) {
-      pictureLightBox[0].firstChild().src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
+  } else if (direction === 'left') {
+    if (index === 0) {
+      nextIndex = medias.length - 1;
     } else {
-      mediaContainer.innerHTML = '';
-      const photoElement = mediaFactory.createPhoto();
-      mediaContainer.appendChild(photoElement);
+      nextIndex = index - 1;
     }
-  }
-  //
-  pictureLightBox[0].id = medias[nextIndex].id;
-  titlePictureLightBox[0].innerText = medias[nextIndex].title;
-}
-
-// Fonction 'lightbox-modal'
-function goLeft() {
-
-  const pictureLightBox = document.getElementsByClassName("picture-lightbox");
-  const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
-  const mediaContainer = document.getElementById('media-container-lightbox');
-  
-  const index = medias.findIndex(function (media) {
-    return media.id == pictureLightBox[0].id;
-  })
-
-  let nextIndex;
-  if (index === 0) {
-    nextIndex = medias.length - 1;
-  } else {
-    nextIndex = index - 1;
   }
 
   const mediaFactory = new MediaFactory(medias[nextIndex]);
