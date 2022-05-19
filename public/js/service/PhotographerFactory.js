@@ -7,14 +7,22 @@ export class PhotographerFactory {
     // Méthode pour crée une card de photographe et ses détails
     createPhotographerCard(){
         const link = document.createElement('a');
+        link.ariaLabel = "Lien vers le photographe " + this.photographer.name;
+        
         const article = document.createElement('article');
+        
         const image = document.createElement('img');
+        image.alt = "Photo de profil du photographe " + this.photographer.name;
+        
         const nom = document.createElement('h2');
         nom.className = "nom";
+        
         const ville = document.createElement('div');
         ville.className = "ville";
+        
         const description = document.createElement('div');
         description.className = "description";
+        
         const prix = document.createElement('div');
         prix.className = "prix";
 
