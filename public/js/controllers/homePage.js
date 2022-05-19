@@ -16,9 +16,19 @@ function displayPhotographers(photographers) {
 
         // Récupération de la Factory -> 'PhotographerFactory'
         const photographerFactory = new PhotographerFactory(photographer);
-    
+        const article = photographerFactory.createPhotographerCard();
         // Dans notre main crée un nouvelle card ou un "enfant" a la précédente, t'en qu'il y a un nouveau photographe 
         // ( à partir du model dans notre "class" -> 'PhotographerFactory' de la méthode createPhotographerCard() )
-        photographersContainer.appendChild(photographerFactory.createPhotographerCard());
+        photographersContainer.appendChild(article);
+
+        setEvent(article, photographer);
     };
+}
+
+function setEvent(article, photographer) {
+    article.addEventListener('keypress', (e) => {
+        if(e.code === "Space") {
+            document.location.href = "/photographer-page.html?id=" + photographer.id;
+        }
+    })
 }
