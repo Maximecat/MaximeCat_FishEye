@@ -13,8 +13,6 @@ const params = Object.fromEntries(urlSearchParams.entries());
 const photographerId = params.id;
 console.log(photographerId);
 
-// Exécution de fonction propre a chaque icons de la "lightbox-modal" au 'click'
-// Icon de fermeture
 const xmarkIcon = document.getElementById('close-button');
 xmarkIcon.addEventListener('click', closeModal);
 
@@ -24,14 +22,34 @@ right.addEventListener('click', () => nextMedia('right'));
 const left = document.getElementById('left');
 left.addEventListener('click', () => nextMedia('left'));
 
-// Fonction de récupération du photographe (par son numéro d'identifiant "Id")
+
+
+//------------------------------------------------
+
+
+
+// const displayChoiceMenu = document.getElementById('firstbloc');
+// displayChoiceMenu.addEventListener('click', openMenu);
+
+// function openMenu() {
+
+//   const secondBloc = document.getElementById('secondbloc');
+//   secondBloc.style.display = "block";
+
+//   const iChevronDown = document.getElementById('chevronDown');
+//   iChevronDown.style.transform = "rotateX(180deg)";
+//   iChevronDown.style.transition = "0.5s";
+
+// }
+
+
+//------------------------------------------------
+
 getPhotographer(photographerId)
   .then(function (photographer) {
-    // Récupération de la Factory -> PhotographerFactory
+
     const photographerFactory = new PhotographerFactory(photographer);
 
-    // Création du header pour le photographe
-    //( à partir du model dans notre "class" -> 'PhotographerFactory' de la méthode createPhotographerHeader() )
     photographerFactory.createPhotographerHeader();
 
     const contactButton = document.getElementById('btn-contact');
@@ -42,26 +60,23 @@ getPhotographer(photographerId)
 
   })
 
-// Fonction de récupération des médias ( du photographe par son numéro d'identifiant "Id"), 
-// une fois fais on appel la fonction 'displayMedias' qui parcours la liste des medias et les affiche dans notre div (en dynamique)
+
 getMedias(photographerId)
   .then(displayMedias)
 
-// Fonction pour parcourir la liste des medias et les affiche dans notre div (en dynamique)
-function displayMedias(mediasFromFetch) {
+function displayMedias(mediasFromFetch, criteria = "likes") {
 
   medias = mediasFromFetch;
-  // Récupération de la div ou seront affiché nos medias
+
+  sortMedias(criteria);
+
   const photographMedias = document.getElementById('photograph-medias');
 
-  // Boucle sur la liste des medias
+  photographMedias.innerHTML="";
+
   for (const media of medias) {
 
-    // Récupération de la Factory -> 'MediaFactory'
     const mediaFactory = new MediaFactory(media);
-
-    // Dans notre div crée un nouvelle card ou un "enfant" a la précédente, t'en qu'il y a un nouveau media pour se photographe 
-    // ( à partir du model dans notre "class" -> 'MediaFactory' de la méthode createMediaCard() )
     photographMedias.appendChild(mediaFactory.createMediaCard());
 
   }
@@ -71,9 +86,44 @@ function displayMedias(mediasFromFetch) {
   const divsLikes = document.getElementsByClassName('like-icon');
   for (const divLikes of divsLikes) {
     divLikes.addEventListener('click', switchLikes);
+    divLikes.addEventListener('keypress', (e) => {
+      if (e.code === "Enter") {
+        switchLikes(e);
+      }
+    })
   }
 
 }
+
+function setSortEvent() {
+  const sortChoice = document.querySelector(".sortBy");
+  sortChoice.addEventListener('click', (e) => {
+    displayMedias(medias, e.target.id)
+    console.log(e.target.id);
+  })
+}
+
+setSortEvent();
+
+function sortMedias(criteria) {
+  switch (criteria) {
+    case 'date':
+      console.log(criteria, medias);
+      medias = medias.sort((a, b) => new Date(b[criteria]).getTime() - new Date(a[criteria]).getTime());
+      break;
+
+    case 'title':
+      console.log(criteria, medias);
+      medias = medias.sort((a, b) => a[criteria].localeCompare(b[criteria]));
+      break;
+
+    case 'likes':
+    default:
+      medias = medias.sort((a, b) => b[criteria] - a[criteria]);
+      break;
+  }
+}
+
 
 function displayTotalLikes() {
   const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
@@ -192,7 +242,6 @@ function closeModalForm() {
   contactModal.style.display = "none";
 }
 
-// Fonction de fermeture pour nôtre 'lightbox-modal'
 function closeModal() {
   const modal = document.getElementById('lightbox-modal');
   modal.style.display = "none";
