@@ -1,9 +1,12 @@
 /*/      LOGO      /*/
-.logo {
-    height: 50px;
+.a-for-logo-second-page {
     margin-left: 100px;
-    margin-top: 35px;
-    margin-bottom: 35px;
+}
+
+.logo {
+    height: 60px;
+    margin-top: 40px;
+    align-content: center;
 }
 
 /*///////      HEADER - BANNIERE      ///////*/
@@ -11,7 +14,13 @@
     background-color: #FAFAFA;
     height: 300px;
     min-width: 1150px;
-    margin: 0 100px 0px;
+    margin: 65px 100px 0px;
+}
+
+/*/////// BLOC INFOS DU PHOTOGRAPHE ///////*/
+.photograph-header-bloc-1 {
+    width: fit-content;
+    padding-top: 20px;
 }
 
 /*/      NOM DU PHOTOGRAPHE      /*/
@@ -22,8 +31,8 @@
     font-size: 64px;
     line-height: 83px;
     margin-left: 50px;
+
     color: #D3573C;
-    padding-top: 60px;
 }
 
 /*/      VILLE DU PHOTOGRAPHE      /*/
@@ -35,6 +44,7 @@
     line-height: 31px;
     margin-left: 50px;
     margin-top: -40px;
+    width: fit-content;
 
     color: #901C1C;
 }
@@ -47,7 +57,8 @@
     font-size: 18px;
     line-height: 23px;
     margin-left: 50px;
-
+    width: fit-content;
+    
     color: #525252;
 }
 
@@ -97,7 +108,7 @@
 }
 
 /*/       TEXTE AVANT MENU DEROULANT "TRIER PAR"      /*/
-p {
+.trier-par {
     position: absolute;
     font-family: DM Sans;
     font-style: normal;
@@ -113,8 +124,6 @@ p {
 /*///////      MENU DEROULANT      ///////*/
 nav {
     position: absolute;
-    width: 140px;
-    height: 47px;
     background: #911C1C;
     border-radius: 5px;
     float: left;
@@ -131,48 +140,39 @@ nav * {
 }
 
 /*/      PREMIER BLOC DU MENU     /*/
-.firstbloc {
+/* #firstbloc {
     background-color: #911C1C;
     border-radius: 5px;
-}
+} */
 
 /*/      PREMIER CHOIX      /*/
-.firstchoice {
-    list-style: none;
-    padding-top: 8px;
-}
-
-/*/      LIEN PREMIER CHOIX      /*/
-.firstchoice a {
+#likes {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border-style: none;
     font-family: DM Sans;
     font-style: normal;
-    font-size: 16px;
-    text-decoration: none;
+    font-size: 18px;
+    background: #911C1C;
     color: #FAFAFA;
 }
 
 /*/      ICON A DROITE DU PREMIER CHOIX      /*/
-.firstchoice i {
-    padding: 2px 0px 4px 20px;
-}
-
-/*/      AU SURVOL DU PREMIER CHOIX -> MOUVEMENT DE L'ICON     /*/
-.firstchoice:hover i {
-    transition: 0.5s;
-    transform: rotateX(180deg);
-    padding: 2px 0px 4px 20px;
+#likes i {
+    padding: 5px 17px 12px 20px;
 }
 
 /*/      DEUXIEME BLOC DU MENU (display: none)     /*/
-.secondbloc {
+/* #secondbloc {
     display: none;
     border-radius: 5px;
     padding-top: 0px;
-}
+} */
 
 /*/      AU SURVOL DU PREMIER CHOIX, LE DEUXIEME BLOC DU MENU (display: block)      /*/
-.firstchoice:hover .secondbloc {
-    display: block;
+/* #firstchoice:focus #secondbloc {
     font-family: DM Sans;
     font-style: normal;
     font-size: 16px;
@@ -180,34 +180,34 @@ nav * {
     border-radius: 5px;
     padding-left: 0px;
     margin-left: 0px;
-}
+} */
 
 /*/      DEUXIEME CHOIX      /*/
-.secondchoice {
+/* .secondchoice {
     list-style: none;
     padding-top: 10px;
     padding-left: 0px;
     margin-left: 0px;
     padding-top: 25px;
-}
+} */
 
 /*/      TROISIEME CHOIX      /*/
-.thirdchoice {
+/* .thirdchoice {
     list-style: none;
     padding-left: 0px;
     margin-left: 0px;
     padding-top: 25px;
     padding-bottom: 15px;
-}
+} */
 
 /*/      INTERLIGNE BLANCHE ENTRE LES CHOIX      /*/
-.white-line {
+/* #white-line {
     border-top: 1px solid white;
     position: absolute;
     width: 115px;
     margin-top: 12px;
-}
-
+    margin-left: -5px;
+} */
 
 /*///////      MEDIAS DU PHOTOGRAPHE      ///////*/
 #photograph-medias {
@@ -531,7 +531,7 @@ form .input-message {
         margin-top: -52px;
     }
 
-    p {
+    .trier-par {
         font-size: 20px;
         margin-top: 45px;
     }
@@ -623,6 +623,7 @@ form .input-message {
 }
 
 @media screen and (max-device-width: 768px) {
+
     .photograph-header {
         height: 390px;
     }
@@ -656,7 +657,7 @@ form .input-message {
         margin-top: -174px;
     }
 
-    p {
+    .trier-par {
         font-size: 28px;
         margin-top: 50px;
     }
@@ -793,11 +794,17 @@ form .input-message {
 
 @media screen and (max-device-width: 375px) {
 
+    header {
+        margin-bottom: 120px;
+    }
+
+    .a-for-logo-second-page {
+        margin-left: 455px;
+    }
+
     .logo {
         block-size: 7em;
-        margin-left: 455px;
-        margin-top: 75px;
-        margin-bottom: 70px;
+        margin-top: 100px;
     }
 
     .photograph-header {
@@ -806,27 +813,31 @@ form .input-message {
 
     .photograph-header-bloc-1 {
         padding-top: 490px;
+        width: auto;
     }
 
     .photograph-name {
         display: flex;
         place-content: center;
-        margin-left: auto;
         font-size: 105px;
+        margin-left: 0px;
+        width: auto;
     }
 
     .photograph-city {
         display: flex;
         place-content: center;
         font-size: 53px;
-        margin-left: auto;
+        margin-left: 0px;
+        width: auto;
     }
 
     .photograph-desc {
         display: flex;
         place-content: center;
         font-size: 41px;
-        margin-left: auto;
+        margin-left: 0px;
+        width: auto;
     }
 
     .photograph-header-bloc-2 {
@@ -856,7 +867,7 @@ form .input-message {
         margin-top: -325px;
     }
 
-    p {
+    .trier-par {
         font-size: 55px;
         margin-top: 120px;
     }
