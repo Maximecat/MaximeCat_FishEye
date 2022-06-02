@@ -56,7 +56,7 @@ export class PhotographerFactory {
 
         desc.innerText = this.photographer.tagline;
 
-        img.src = "/public/images/Photographers/" + this.photographer.portrait;
+        img.src = "public/images/Photographers/" + this.photographer.portrait;
         img.alt = "Photo de profil du photographe " + this.photographer.name;
     }
 }
