@@ -147,9 +147,9 @@ nav * {
 
 /*/      PREMIER CHOIX      /*/
 #likes {
-    padding-top: 10px;
+    padding-top: 13px;
     padding-left: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     border-radius: 5px;
     border-style: none;
     font-family: DM Sans;
@@ -160,8 +160,9 @@ nav * {
 }
 
 /*/      ICON A DROITE DU PREMIER CHOIX      /*/
-#likes i {
-    padding: 5px 17px 12px 20px;
+#chevronDown {
+    padding: 16px 17px 19px 20px;
+    color: white;
 }
 
 /*/      DEUXIEME BLOC DU MENU (display: none)     /*/
