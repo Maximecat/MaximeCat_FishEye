@@ -51,8 +51,12 @@ export class PhotographerFactory {
         const img = document.getElementById("img");
 
         name.innerText = this.photographer.name;
+
         city.innerText = this.photographer.city + ", " + this.photographer.country;
+
         desc.innerText = this.photographer.tagline;
+
         img.src = "/public/images/Photographers/" + this.photographer.portrait;
+        img.alt = "Photo de profil du photographe " + this.photographer.name;
     }
 }
