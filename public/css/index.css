@@ -17,10 +17,18 @@ header {
 }
 
 /*/      LOGO      /*/
+.a-for-logo {
+    height: 50px;
+    width: 50px;
+    margin-top: 50px;
+    margin-left: 130px;
+}
+
 .logo {
     height: 60px;
-    margin-left: 130px;
-    margin-top: 50px;
+    /* margin-left: 130px; */
+    /* margin-top: 50px; */
+    margin-top: 0px;
     align-content: center;
 }
 
@@ -33,7 +41,8 @@ header {
 /*/      TITRE "Nos photographes"      /*/
 h1 {
     color: #901C1C;
-    margin-right: 80px;
+    margin-right: 100px;
+    margin-bottom: -35px;
 }
 
 /*///////      LISTE DES PHOTOGRAPHES      ///////*/
@@ -50,7 +59,8 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    padding-top: 50px;
 }
 
 /*/      IMAGE PROFIL PHOTOGRAPHE      /*/
@@ -110,10 +120,6 @@ a {
         min-width: 768px;
     }
 
-    .logo {
-        margin-left: 90px;
-    }
-
     #photographers-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -131,17 +137,9 @@ a {
 
 @media screen and (max-device-width: 768px) {
 
-    .logo {
-        margin-right: auto;
-        margin-bottom: 10px;
-        height: 47px;
-    }
-
     h1 {
-        margin-left: auto;
-        margin-right: auto;
         font-size: 24px;
-        padding-top: 30px;
+        padding-top: 15px;
     }
 
     #photographers-container {
@@ -180,14 +178,22 @@ a {
         flex-direction: column;
     }
 
+    .a-for-logo {
+        height: 50px;
+        width: 50px;
+        margin-top: 80px;
+        margin-left: 130px;
+    }
+
     .logo {
-        margin-left: auto;
-        margin-top: 100px;
+        margin-left: -260px;
         block-size: 7em;
     }
 
     h1 {
         font-size: 35px;
+        margin-top: 80px;
+        margin-left: 105px;
     }
 
     #photographers-container img {
