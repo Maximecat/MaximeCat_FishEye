@@ -43,7 +43,7 @@ export class MediaFactory {
         heartLikes.id = "heart-likes-" + this.media.id;
         heartLikes.tabIndex = 3;
 
-        photographPicture.src = "/public/images/" + this.media.photographerId + "/" + (this.media.image|| this.media.video)
+        photographPicture.src = "public/images/" + this.media.photographerId + "/" + (this.media.image|| this.media.video)
         photographPicture.id = "thumb-" + this.media.id;
 
         pictureTitle.innerText = this.media.title;
@@ -95,7 +95,7 @@ export class MediaFactory {
     createPhoto() {
         const mediaToDisplay = document.createElement('img');
 
-        mediaToDisplay.src = "/public/images/" + this.media.photographerId + "/" + this.media.image;
+        mediaToDisplay.src = "public/images/" + this.media.photographerId + "/" + this.media.image;
         mediaToDisplay.alt = "Photo de :" + this.media.image;
         mediaToDisplay.id = this.media.id;
         mediaToDisplay.classList.add("picture-lightbox");
@@ -108,7 +108,7 @@ export class MediaFactory {
         mediaToDisplay.controls = true;
 
         const videoSource = document.createElement('source');
-        videoSource.src = "/public/images/" + this.media.photographerId + "/" + this.media.video;
+        videoSource.src = "public/images/" + this.media.photographerId + "/" + this.media.video;
 
         const alt = document.createElement('p');
         alt.innerText = `Votre navigateur ne supporte pas la vidéo html. Voici un <a href="${videoSource.src}">lien vers la vidéo</a>`
