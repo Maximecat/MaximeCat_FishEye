@@ -277,7 +277,7 @@ function nextMedia(direction) {
 
   if (medias[index] instanceof Image) {
     if (medias[nextIndex] instanceof Image) {
-      pictureLightBox[0].src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
+      pictureLightBox[0].src = "public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
     } else {
       mediaContainer.innerHTML = '';
       const videoElement = mediaFactory.createVideo();
@@ -285,7 +285,7 @@ function nextMedia(direction) {
     }
   } else if (medias[index] instanceof Video) {
     if (medias[nextIndex] instanceof Video) {
-      pictureLightBox[0].firstChild().src = "/public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
+      pictureLightBox[0].firstChild().src = "public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
     } else {
       mediaContainer.innerHTML = '';
       const photoElement = mediaFactory.createPhoto();
