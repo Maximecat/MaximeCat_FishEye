@@ -34,7 +34,7 @@ export class PhotographerFactory {
         article.appendChild(prix);
 
         link.href = "/photographer-page.html?id=" + this.photographer.id;
-        image.src = "/public/images/Photographers/" + this.photographer.portrait;
+        image.src = "public/images/Photographers/" + this.photographer.portrait;
         nom.innerText = this.photographer.name;
         ville.innerText = this.photographer.city + ", " + this.photographer.country;
         description.innerText = this.photographer.tagline;
