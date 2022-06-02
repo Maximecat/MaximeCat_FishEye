@@ -12,38 +12,43 @@
 
 <body>
     <header>
-        <a href="/index.html"><img src="/public/assets/logo/logo.png" class="logo" /></a>
+        <a href="/index.html" class="a-for-logo-second-page" tabindex="1"><img src="/public/assets/logo/logo.png"
+                class="logo" alt="Logo du site FishEye" /></a>
     </header>
     <main id="main">
 
         <div class="photograph-header">
             <div class="photograph-header-bloc-1">
-                <h1 id="name" class="photograph-name"></h1>
-                <h2 id="city" class="photograph-city"></h2>
-                <h3 id="desc" class="photograph-desc"></h3>
+                <h1 id="name" class="photograph-name" tabindex="2"></h1>
+                <h2 id="city" class="photograph-city" tabindex="2"></h2>
+                <h3 id="desc" class="photograph-desc" tabindex="2"></h3>
             </div>
             <div class="photograph-header-bloc-2">
-                <button id="btn-contact" class="contact_button">Contactez-moi</button>
+                <button id="btn-contact" class="contact_button" tabindex="3">Contactez-moi</button>
             </div>
             <div class="photograph-header-bloc-3">
-                <img id="img" class="photograph-img" src="" alt="">
+                <img id="img" class="photograph-img" tabindex="3">
             </div>
         </div>
 
-        <p>Trier par</p>
+        <h2 class="trier-par">Trier par</h2>
 
         <nav>
-            <ul class="firstbloc">
-                <li class="firstchoice"><a href="#">Popularité<i class="fa-solid fa-chevron-down"></i></a>
-                    <ul class="secondbloc">
-                        <div class="white-line"></div>
-                        <li class="secondchoice"><a href="#">Date</a></li>
-                        <div class="white-line"></div>
-                        <li class="thirdchoice"><a href="#">Titre</a></li>
+            <button id="likes" class="sortBy">Popularité<i id="chevronDown" class="icon fa-solid fa-chevron-down"></i></button>
+        </nav>
+
+        <!-- <nav>
+            <ul id="firstbloc">
+                <li id="firstchoice" class="sortBy">Popularité<i id="chevronDown" class="icon fa-solid fa-chevron-down"></i>
+                    <ul id="secondbloc">
+                        <div id="white-line"></div>
+                        <li id="date" class="secondchoice sortBy">Date</li>
+                        <div id="white-line"></div>
+                        <li id="title" class="thirdchoice sortBy">Titre</li>
                     </ul>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 
         <div id="photograph-medias">
         </div>
@@ -66,7 +71,7 @@
             <i id="left" class="fa-solid fa-chevron-left"></i>
             <div class="lightbox-medias">
                 <div id="media-container-lightbox"></div>
-                <p class="title-picture-lightbox"></p>
+                <h2 class="title-picture-lightbox">Titre Media</h2>
             </div>
             <div class="icon-right-lightbox">
                 <i id="close-button" class="fa-solid fa-xmark"></i>
@@ -82,7 +87,7 @@
                     <h2>Contactez-moi</h2>
                     <div id="name-profil"></div>
                 </div>
-                <img id="close-img-button" src="/public/assets/icons/close.svg" />
+                <img id="close-img-button" src="/public/assets/icons/close.svg" alt="Fermer la modale de contact" />
             </header>
             <form id="contact_form">
                 <div class="formData">
