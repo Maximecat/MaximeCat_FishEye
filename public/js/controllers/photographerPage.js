@@ -26,21 +26,39 @@ left.addEventListener('click', () => nextMedia('left'));
 
 //------------------------------------------------
 
+const iconOpenMenu = document.getElementById('chevronDown');
+iconOpenMenu.addEventListener('click', openMenu);
+
+const iconCloseMenu = document.getElementById('chevronDown2');
+iconCloseMenu.addEventListener('click', closeMenu);
 
 
-// const displayChoiceMenu = document.getElementById('firstbloc');
-// displayChoiceMenu.addEventListener('click', openMenu);
+function openMenu() {
 
-// function openMenu() {
+  const secondBloc = document.getElementById('second-part-menu');
+  secondBloc.style.display = "flex";
 
-//   const secondBloc = document.getElementById('secondbloc');
-//   secondBloc.style.display = "block";
+  const iChevronDown = document.getElementById('chevronDown');
+  iChevronDown.style.display = "none";
+  const iChevronDown2 = document.getElementById('chevronDown2');
+  iChevronDown2.style.display = "inline-block";
 
-//   const iChevronDown = document.getElementById('chevronDown');
-//   iChevronDown.style.transform = "rotateX(180deg)";
-//   iChevronDown.style.transition = "0.5s";
+  iChevronDown2.style.transform = "rotateX(180deg)";
+}
 
-// }
+function closeMenu() {
+
+  const secondBloc = document.getElementById('second-part-menu');
+  secondBloc.style.display = "none";
+  
+  const iChevronDown = document.getElementById('chevronDown');
+  iChevronDown.style.display = "initial";
+  const iChevronDown2 = document.getElementById('chevronDown2');
+  iChevronDown2.style.display = "none";
+  
+  iChevronDown.style.transform = "rotateX(180deg)";
+}
+
 
 
 //------------------------------------------------
