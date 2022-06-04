@@ -135,8 +135,6 @@ nav {
 nav * {
     margin: 0px;
     padding: 0px;
-    padding-top: 4px;
-    padding-left: 5px;
 }
 
 /*/      PREMIER BLOC DU MENU     /*/
@@ -163,6 +161,41 @@ nav * {
 #chevronDown {
     padding: 16px 17px 19px 20px;
     color: white;
+}
+
+#chevronDown2 {
+    display: none;
+    padding: 16px 17px 19px 20px;
+    color: white;
+}
+
+#second-part-menu {
+    display: none;
+    flex-direction: column;
+}
+
+#date {
+    padding: 14px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: DM Sans;
+    font-style: normal;
+    font-size: 18px;
+    background: #911C1C;
+    color: white;
+    text-align: left;
+}
+
+#title {
+    padding: 14px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: DM Sans;
+    font-style: normal;
+    font-size: 18px;
+    background: #911C1C;
+    color: white;
+    text-align: left;
 }
 
 /*/      DEUXIEME BLOC DU MENU (display: none)     /*/
@@ -202,13 +235,11 @@ nav * {
 } */
 
 /*/      INTERLIGNE BLANCHE ENTRE LES CHOIX      /*/
-/* #white-line {
+#white-line {
     border-top: 1px solid white;
-    position: absolute;
     width: 115px;
-    margin-top: 12px;
-    margin-left: -5px;
-} */
+    margin-left: 15px;
+}
 
 /*///////      MEDIAS DU PHOTOGRAPHE      ///////*/
 #photograph-medias {
