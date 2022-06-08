@@ -26,37 +26,22 @@ left.addEventListener('click', () => nextMedia('left'));
 
 //------------------------------------------------
 
-const iconOpenMenu = document.getElementById('chevronDown');
+const iconOpenMenu = document.getElementById('menu-button');
 iconOpenMenu.addEventListener('click', openMenu);
 
-const iconCloseMenu = document.getElementById('chevronDown2');
-iconCloseMenu.addEventListener('click', closeMenu);
-
+// const iconCloseMenu = document.getElementById('chevronDown2');
+// iconCloseMenu.addEventListener('click', closeMenu);
 
 function openMenu() {
 
   const secondBloc = document.getElementById('second-part-menu');
   secondBloc.style.display = "flex";
-
-  const iChevronDown = document.getElementById('chevronDown');
-  iChevronDown.style.display = "none";
-  const iChevronDown2 = document.getElementById('chevronDown2');
-  iChevronDown2.style.display = "inline-block";
-
-  iChevronDown2.style.transform = "rotateX(180deg)";
 }
 
 function closeMenu() {
 
   const secondBloc = document.getElementById('second-part-menu');
   secondBloc.style.display = "none";
-  
-  const iChevronDown = document.getElementById('chevronDown');
-  iChevronDown.style.display = "initial";
-  const iChevronDown2 = document.getElementById('chevronDown2');
-  iChevronDown2.style.display = "none";
-  
-  iChevronDown.style.transform = "rotateX(180deg)";
 }
 
 
@@ -82,7 +67,9 @@ getPhotographer(photographerId)
 getMedias(photographerId)
   .then(displayMedias)
 
-function displayMedias(mediasFromFetch, criteria = "likes") {
+function displayMedias(mediasFromFetch, criteria = "likes", sortLabel = "Popularité") {
+
+  document.getElementById('sort-choice').innerText = sortLabel;
 
   medias = mediasFromFetch;
 
@@ -90,7 +77,7 @@ function displayMedias(mediasFromFetch, criteria = "likes") {
 
   const photographMedias = document.getElementById('photograph-medias');
 
-  photographMedias.innerHTML="";
+  photographMedias.innerHTML = "";
 
   for (const media of medias) {
 
@@ -114,16 +101,22 @@ function displayMedias(mediasFromFetch, criteria = "likes") {
 }
 
 function setSortEvent() {
-  const sortChoice = document.querySelector(".sortBy");
-  sortChoice.addEventListener('click', (e) => {
-    displayMedias(medias, e.target.id)
-    console.log(e.target.id);
-  })
+  const sortChoices = document.getElementsByClassName("sortBy");
+  for (const choice of sortChoices) {
+    choice.addEventListener('click', (e) => {
+      closeMenu();
+      console.log(e);
+      if (e.target.innerText) {
+        displayMedias(medias, e.target.id, e.target.innerText)
+      }
+    })
+  }
 }
 
 setSortEvent();
 
 function sortMedias(criteria) {
+
   switch (criteria) {
     case 'date':
       console.log(criteria, medias);
@@ -147,7 +140,6 @@ function displayTotalLikes() {
   const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
   const totalLikes = document.getElementById('total-likes');
   totalLikes.innerText = monRes;
-
 }
 
 function switchLikes(event) {
@@ -155,15 +147,18 @@ function switchLikes(event) {
   const likeId = event.target.id;
   const mediaId = likeId.split('heart-likes-')[1];
   let indexToDelete = -1;
+
   for (let i = 0, len = mediaLikes.length; i < len; i++) {
     if (mediaId === mediaLikes[i]) {
       indexToDelete = i;
       break;
     }
   }
+
   if (indexToDelete > -1) {
     mediaLikes.splice(indexToDelete, 1);
   }
+
   for (const media of medias) {
     if (media.id == mediaId) {
       media.likes += indexToDelete > -1 ? -1 : 1;
@@ -175,8 +170,8 @@ function switchLikes(event) {
       break;
     }
   }
-  displayTotalLikes();
 
+  displayTotalLikes();
 }
 
 //--------------------------------------------------------------------------
