@@ -34,26 +34,32 @@
         <h2 class="trier-par">Trier par</h2>
 
         <nav>
-            <button id="likes" class="sortBy">Popularité</button><i id="chevronDown" class="icon fa-solid fa-chevron-down"></i><i id="chevronDown2" class="icon fa-solid fa-chevron-down"></i>
+            <button id="menu-button" class="sort-by">
+                <span id="sort-choice"></span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="second-part-menu">
+                <button class="sortBy sort-by">
+                    <span id="likes">Popularité</span>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <div id="white-line"></div>
+                <button id="date" class="sortBy sort-by">Date</button>
+                <div id="white-line"></div>
+                <button id="title" class="sortBy sort-by">Titre</button>
+            </div>
+        </nav>
+
+        <!-- <nav>
+            <button id="likes" class="sortBy">Popularité</button>
+            <i id="chevronDown" class="icon fa-solid fa-chevron-down"></i>
+            <i id="chevronDown2" class="icon fa-solid fa-chevron-down"></i>
             <div id="second-part-menu">
                 <div id="white-line"></div>
                 <button id="date" class="sortBy">Date</button>
                 <div id="white-line"></div>
                 <button id="title" class="sortBy">Titre</button>
             </div>
-        </nav>
-
-        <!-- <nav>
-            <ul id="firstbloc">
-                <li id="firstchoice" class="sortBy">Popularité<i id="chevronDown" class="icon fa-solid fa-chevron-down"></i>
-                    <ul id="secondbloc">
-                        <div id="white-line"></div>
-                        <li id="date" class="secondchoice sortBy">Date</li>
-                        <div id="white-line"></div>
-                        <li id="title" class="thirdchoice sortBy">Titre</li>
-                    </ul>
-                </li>
-            </ul>
         </nav> -->
 
         <div id="photograph-medias">
