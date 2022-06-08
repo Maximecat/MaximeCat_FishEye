@@ -137,108 +137,43 @@ nav * {
     padding: 0px;
 }
 
-/*/      PREMIER BLOC DU MENU     /*/
-/* #firstbloc {
-    background-color: #911C1C;
-    border-radius: 5px;
-} */
-
-/*/      PREMIER CHOIX      /*/
-#likes {
-    padding-top: 13px;
-    padding-left: 15px;
-    padding-bottom: 15px;
+.sort-by {
+    height: 60px;
+    width: 150px;
+    padding: 14px;
     border-radius: 5px;
     border-style: none;
     font-family: DM Sans;
     font-style: normal;
     font-size: 18px;
     background: #911C1C;
-    color: #FAFAFA;
-}
-
-/*/      ICON A DROITE DU PREMIER CHOIX      /*/
-#chevronDown {
-    padding: 16px 17px 19px 20px;
     color: white;
+    text-align: left;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#chevronDown2 {
-    display: none;
-    padding: 16px 17px 19px 20px;
+.fa-chevron-down, .fa-chevron-up {
     color: white;
 }
 
 #second-part-menu {
     display: none;
     flex-direction: column;
-}
-
-#date {
-    padding: 14px;
-    border-radius: 5px;
-    border-style: none;
-    font-family: DM Sans;
-    font-style: normal;
-    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
     background: #911C1C;
-    color: white;
-    text-align: left;
+    border-radius: 5px;
 }
-
-#title {
-    padding: 14px;
-    border-radius: 5px;
-    border-style: none;
-    font-family: DM Sans;
-    font-style: normal;
-    font-size: 18px;
-    background: #911C1C;
-    color: white;
-    text-align: left;
-}
-
-/*/      DEUXIEME BLOC DU MENU (display: none)     /*/
-/* #secondbloc {
-    display: none;
-    border-radius: 5px;
-    padding-top: 0px;
-} */
-
-/*/      AU SURVOL DU PREMIER CHOIX, LE DEUXIEME BLOC DU MENU (display: block)      /*/
-/* #firstchoice:focus #secondbloc {
-    font-family: DM Sans;
-    font-style: normal;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    padding-left: 0px;
-    margin-left: 0px;
-} */
-
-/*/      DEUXIEME CHOIX      /*/
-/* .secondchoice {
-    list-style: none;
-    padding-top: 10px;
-    padding-left: 0px;
-    margin-left: 0px;
-    padding-top: 25px;
-} */
-
-/*/      TROISIEME CHOIX      /*/
-/* .thirdchoice {
-    list-style: none;
-    padding-left: 0px;
-    margin-left: 0px;
-    padding-top: 25px;
-    padding-bottom: 15px;
-} */
 
 /*/      INTERLIGNE BLANCHE ENTRE LES CHOIX      /*/
 #white-line {
     border-top: 1px solid white;
-    width: 115px;
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /*///////      MEDIAS DU PHOTOGRAPHE      ///////*/
