@@ -1,3 +1,4 @@
+// Modèle d'un Photographe
 export class Photographer {
     name;
     id;
