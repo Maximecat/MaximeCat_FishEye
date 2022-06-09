@@ -1,3 +1,4 @@
+// Modèle d'un Média
 export class Media {
     id;
     photographerId;
