@@ -4,7 +4,7 @@ export class PhotographerFactory {
         this.photographer = photographer
     }
 
-    // Méthode pour crée une card de photographe et ses détails
+    // Méthode pour crée la card du photographe
     createPhotographerCard(){
         const link = document.createElement('a');
         link.ariaLabel = "Lien vers le photographe " + this.photographer.name;
