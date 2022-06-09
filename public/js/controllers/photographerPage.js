@@ -22,29 +22,20 @@ right.addEventListener('click', () => nextMedia('right'));
 const left = document.getElementById('left');
 left.addEventListener('click', () => nextMedia('left'));
 
-
-
 //------------------------------------------------
 
 const iconOpenMenu = document.getElementById('menu-button');
 iconOpenMenu.addEventListener('click', openMenu);
 
-// const iconCloseMenu = document.getElementById('chevronDown2');
-// iconCloseMenu.addEventListener('click', closeMenu);
-
 function openMenu() {
-
   const secondBloc = document.getElementById('second-part-menu');
   secondBloc.style.display = "flex";
 }
 
 function closeMenu() {
-
   const secondBloc = document.getElementById('second-part-menu');
   secondBloc.style.display = "none";
 }
-
-
 
 //------------------------------------------------
 
@@ -52,7 +43,6 @@ getPhotographer(photographerId)
   .then(function (photographer) {
 
     const photographerFactory = new PhotographerFactory(photographer);
-
     photographerFactory.createPhotographerHeader();
 
     const contactButton = document.getElementById('btn-contact');
@@ -60,7 +50,6 @@ getPhotographer(photographerId)
 
     const photographerPrice = document.getElementById('price-banner');
     photographerPrice.innerText = photographer.price + "€ / jour";
-
   })
 
 
@@ -76,14 +65,11 @@ function displayMedias(mediasFromFetch, criteria = "likes", sortLabel = "Popular
   sortMedias(criteria);
 
   const photographMedias = document.getElementById('photograph-medias');
-
   photographMedias.innerHTML = "";
 
   for (const media of medias) {
-
     const mediaFactory = new MediaFactory(media);
     photographMedias.appendChild(mediaFactory.createMediaCard());
-
   }
 
   displayTotalLikes();
@@ -97,15 +83,15 @@ function displayMedias(mediasFromFetch, criteria = "likes", sortLabel = "Popular
       }
     })
   }
-
 }
 
 function setSortEvent() {
   const sortChoices = document.getElementsByClassName("sortBy");
   for (const choice of sortChoices) {
     choice.addEventListener('click', (e) => {
+
       closeMenu();
-      console.log(e);
+
       if (e.target.innerText) {
         displayMedias(medias, e.target.id, e.target.innerText)
       }
@@ -116,7 +102,6 @@ function setSortEvent() {
 setSortEvent();
 
 function sortMedias(criteria) {
-
   switch (criteria) {
     case 'date':
       console.log(criteria, medias);
@@ -135,7 +120,6 @@ function sortMedias(criteria) {
   }
 }
 
-
 function displayTotalLikes() {
   const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
   const totalLikes = document.getElementById('total-likes');
@@ -143,7 +127,6 @@ function displayTotalLikes() {
 }
 
 function switchLikes(event) {
-  console.log(mediaLikes);
   const likeId = event.target.id;
   const mediaId = likeId.split('heart-likes-')[1];
   let indexToDelete = -1;
@@ -242,7 +225,6 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
 }
 
 function displayModalForm(photographer) {
-
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
 
@@ -261,7 +243,6 @@ function closeModal() {
 }
 
 function nextMedia(direction) {
-
   const pictureLightBox = document.getElementsByClassName("picture-lightbox");
   const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
   const mediaContainer = document.getElementById('media-container-lightbox');
