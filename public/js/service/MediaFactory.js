@@ -60,6 +60,7 @@ export class MediaFactory {
         photographPicture.addEventListener('click', () => {
             this.displayDialog();
         });
+        // Accessibilité ------- la modale des medias agrandi est accessible avec 'Espace' ou 'Entrer'
         photographPicture.addEventListener('keypress', (e) => {
             if(e.code === "Space" || e.code === "Enter") {
                 this.displayDialog();
@@ -92,6 +93,7 @@ export class MediaFactory {
         titlePictureLightBox[0].innerText = this.media.title;
     }
 
+    // Méthode pour crée la balise 'img' dans le cas ou le media est une Image
     createPhoto() {
         const mediaToDisplay = document.createElement('img');
 
@@ -103,6 +105,7 @@ export class MediaFactory {
         return mediaToDisplay;
     }
 
+    // Méthode pour crée la balise 'video' dans le cas ou le media est une Vidéo
     createVideo() {
         const mediaToDisplay = document.createElement('video');
         mediaToDisplay.controls = true;
