@@ -17,7 +17,7 @@ export function getPhotographers() {
 
 // Fonction de récupération d'un photographe
 export function getPhotographer(photographerId) {
-    // Utiliser methode find
+    // Utilisation de la methode find
     return getPhotographers()
         .then((photographers) => photographers
             .find((photographer) => photographer.id === Number(photographerId)))
@@ -26,7 +26,7 @@ export function getPhotographer(photographerId) {
 // Fonction de récupération des medias
 export function getMedias(photographerId) {
 
-    // Utiliser méthode filter
+    // Utilisation de la méthode filter
     return fetch('public/datas/datas.json')
         .then((response) => response.json())
         .then((datas) => datas.media
