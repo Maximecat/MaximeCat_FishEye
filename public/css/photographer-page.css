@@ -1,15 +1,16 @@
-/*/      LOGO      /*/
+/*      Lien Logo      */
 .a-for-logo-second-page {
     margin-left: 100px;
 }
 
+/*      Logo      */
 .logo {
     height: 60px;
     margin-top: 40px;
     align-content: center;
 }
 
-/*///////      HEADER - BANNIERE      ///////*/
+/*-----------      Banniére du photographe     -----------*/
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -17,13 +18,13 @@
     margin: 65px 100px 0px;
 }
 
-/*/////// BLOC INFOS DU PHOTOGRAPHE ///////*/
+/*---      BLOC 1 - Infos du photographe      ---*/
 .photograph-header-bloc-1 {
     width: fit-content;
     padding-top: 20px;
 }
 
-/*/      NOM DU PHOTOGRAPHE      /*/
+/*      Nom du photographe      */
 .photograph-name {
     font-family: DM Sans;
     font-style: normal;
@@ -35,7 +36,7 @@
     color: #D3573C;
 }
 
-/*/      VILLE DU PHOTOGRAPHE      /*/
+/*      Ville du photographe      */
 .photograph-city {
     font-family: DM Sans;
     font-style: normal;
@@ -49,7 +50,7 @@
     color: #901C1C;
 }
 
-/*/      DESCRIPTION DU PHOTOGRAPHE      /*/
+/*      Description du photographe      */
 .photograph-desc {
     font-family: DM Sans;
     font-style: normal;
@@ -58,11 +59,11 @@
     line-height: 23px;
     margin-left: 50px;
     width: fit-content;
-    
+
     color: #525252;
 }
 
-/*///////      BLOC DU BOUTON DE "CONTACT"      ///////*/
+/*---      BLOC 2 - Contacté le photographe      ---*/
 .photograph-header-bloc-2 {
     display: flex;
     justify-content: center;
@@ -70,7 +71,7 @@
     margin-top: -120px;
 }
 
-/*/      BOUTON "CONTACT"      /*/
+/*      Boutton "Contact"      */
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -85,20 +86,21 @@
     margin-top: 20px;
 }
 
+/*      Boutton "Contact" au survol      */
 .contact_button:hover {
     color: #000000;
     background-color: #D3573C;
     transition: 0.3s;
 }
 
-/*///////      BLOC DE L'IMAGE DU PHOTOGRAPHE      ///////*/
+/*---      BLOC 3 - Photo de profil du photographe      ---*/
 .photograph-header-bloc-3 {
     display: flex;
     justify-content: flex-end;
     margin-right: 60px;
 }
 
-/*/      IMAGE DU PHOTOGRAPHE      /*/
+/*      Photo de profil du photographe      */
 .photograph-img {
     height: 180px;
     width: 180px;
@@ -107,7 +109,7 @@
     margin-top: -25px;
 }
 
-/*/       TEXTE AVANT MENU DEROULANT "TRIER PAR"      /*/
+/*-----------      h2 "Trier par" avant menu déroulant     -----------*/
 .trier-par {
     position: absolute;
     font-family: DM Sans;
@@ -121,7 +123,7 @@
     color: #000000;
 }
 
-/*///////      MENU DEROULANT      ///////*/
+/*-----------      Menu déroulant     -----------*/
 nav {
     position: absolute;
     background: #911C1C;
@@ -131,12 +133,12 @@ nav {
     margin-top: 10px;
 }
 
-/*/      PLACEMENT DES ELEMENTS DU MENU      /*/
 nav * {
     margin: 0px;
     padding: 0px;
 }
 
+/*      Choix du menu déroulant      */
 .sort-by {
     height: 60px;
     width: 150px;
@@ -155,10 +157,12 @@ nav * {
     justify-content: space-between;
 }
 
+/*      Icon menu déroulant      */
 .fa-chevron-down, .fa-chevron-up {
     color: white;
 }
 
+/*      Deuxième parti du menu déroulant      */
 #second-part-menu {
     display: none;
     flex-direction: column;
@@ -169,14 +173,14 @@ nav * {
     border-radius: 5px;
 }
 
-/*/      INTERLIGNE BLANCHE ENTRE LES CHOIX      /*/
+/*      Ligne blanche entre les choix      */
 #white-line {
     border-top: 1px solid white;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-/*///////      MEDIAS DU PHOTOGRAPHE      ///////*/
+/*-----------      Galerie du photographe     -----------*/
 #photograph-medias {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -184,9 +188,7 @@ nav * {
     margin: 95px;
 }
 
-
-
-/*/      IMAGES PRODUITE PAR LE PHOTOGRAPHE      /*/
+/*      Photos de la galerie      */
 .photograph-picture {
     display: flex;
     width: 350px;
@@ -196,7 +198,7 @@ nav * {
     margin: auto;
 }
 
-/*/      A PROPOS DE L'IMAGE (TITRE/NOMBRE DE LIKES)     /*/
+/*      Infos : Titre et nombre de likes de la photo      */
 .about-picture {
     display: flex;
     padding: 15px 5px 0px 5px;
@@ -205,7 +207,7 @@ nav * {
     margin: auto;
 }
 
-/*/      TITRE DE L'IMAGE      /*/
+/*      Titre de la photo      */
 .picture-title {
     font-family: DM Sans;
     font-style: normal;
@@ -215,7 +217,7 @@ nav * {
     color: #901C1C;
 }
 
-/*/      NOMBRE DE LIKES DE L'IMAGE      /*/
+/*      Nombre de likes de la photo      */
 .picture-likes {
     width: 58px;
     font-family: DM Sans;
@@ -225,12 +227,12 @@ nav * {
     color: #901C1C;
 }
 
+/*      Espace entre le Nombre et l'icon      */
 .like-margin {
     margin-right: 5px;
 }
 
-/*///////      LIKES-BANNER      ///////*/
-
+/*-----------      Bannière de likes     -----------*/
 #likes-banner {
     position: fixed;
     bottom: 0;
@@ -244,10 +246,12 @@ nav * {
     background-color: #DB8876;
 }
 
+/*      Infos photographe      */
 #banner-display {
     display: flex;
 }
 
+/*      Bloc - Nombre total de likes      */
 #like-counter-banner {
     display: flex;
     width: 50%;
@@ -256,6 +260,7 @@ nav * {
     align-items: center;
 }
 
+/*      Nombre total de likes      */
 #total-likes {
     font-family: DM Sans;
     font-style: normal;
@@ -264,10 +269,12 @@ nav * {
     margin-right: 5px;
 }
 
+/*      Icon coeur      */
 .like-icon-banner {
-    font-size: 20px;  
+    font-size: 20px;
 }
 
+/*      Bloc - Prix du photographe/jour      */
 #price-photograph-banner {
     display: flex;
     width: 50%;
@@ -276,6 +283,7 @@ nav * {
     align-items: center;
 }
 
+/*      Prix du photographe/jour      */
 #price-banner {
     font-family: DM Sans;
     font-style: normal;
@@ -284,7 +292,8 @@ nav * {
     padding-right: 5px;
 }
 
-/*///////      LIGHTBOX-MODALE      ///////*/
+/*-----------      Modal - Photos de la galerie agrandi     -----------*/
+/*      Modal - Photo     */
 #lightbox-modal {
     width: 100%;
     height: 100%;
@@ -296,16 +305,15 @@ nav * {
     background: white;
 }
 
-/*/      ICON CHEVRON GAUCHE      /*/
+/*      Icon flêche de gauche      */
 .fa-chevron-left {
-    height: 750px;
     margin-right: 35px;
     font-size: 48px;
     margin-top: 351px;
     color: #911C1C;
 }
 
-/*/      IMAGE/MEDIA DE LA LIGHTBOX      /*/
+/*      Photo      */
 .picture-lightbox {
     width: 900px;
     height: 750px;
@@ -313,7 +321,7 @@ nav * {
     border-radius: 5px;
 }
 
-/*/      TITRE DU MEDIAS DE LA LIGHTBOX      /*/
+/*      Titre de la photo      */
 .title-picture-lightbox {
     width: 50%;
     margin: 0px;
@@ -326,7 +334,7 @@ nav * {
     color: #911C1C;
 }
 
-/*/      LES ICONS A DROITE (CROIX + CHEVRON)      /*/
+/*      Bloc - icon de fermeture + flêche de droite      */
 .icon-right-lightbox {
     display: flex;
     flex-direction: column;
@@ -335,18 +343,19 @@ nav * {
     font-size: 48px;
 }
 
-/*/      ICON CROIX DROITE (FERMETURE)      /*/
+/*      Icon de fermeture      */
 .fa-xmark {
     color: #911C1C;
 }
 
-/*/      ICON CHEVRON DROITE      /*/
+/*      Icon flêche de droite      */
 .fa-chevron-right {
     color: #911C1C;
     margin-top: 303px;
 }
 
-/*///////      MODALE FORM      ///////*/
+/*-----------      Modal formulaire de contact     -----------*/
+/*      Modal form      */
 #contact_modal {
     width: 100%;
     height: 100%;
@@ -358,7 +367,6 @@ nav * {
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.8);
 }
-
 
 .modal {
     border-radius: 5px;
@@ -373,21 +381,14 @@ nav * {
     margin: auto;
 }
 
-/*/      MODALE HEADER      /*/
+/*---      Header modal      ---*/
 .modal header {
     justify-content: space-between;
     width: 100%;
     display: flex;
 }
 
-/*/      MODALE BOUTON "CLOSE"      /*/
-.modal header img {
-    cursor: pointer;
-    height: fit-content;
-    padding-top: 15px;
-}
-
-/*/      MODALE TEXTE "Contactez-moi"      /*/
+/*      Header - h2 "Contactez-moi"      */
 .modal header h2 {
     font-size: 50px;
     font-family: DM Sans;
@@ -397,6 +398,14 @@ nav * {
     margin-bottom: 0;
 }
 
+/*      Header - Icon de fermeture      */
+.modal header img {
+    cursor: pointer;
+    height: fit-content;
+    padding-top: 15px;
+}
+
+/*      Header - Nom du photographe     */
 #name-profil {
     font-size: 50px;
     font-family: DM Sans;
@@ -406,7 +415,7 @@ nav * {
     margin-bottom: 5px;
 }
 
-/*///////      FORMULAIRE      ///////*/
+/*---      Formulaire de contact      ---*/
 form {
     display: flex;
     width: 100%;
@@ -414,7 +423,7 @@ form {
     align-items: flex-start;
 }
 
-/*/      FORMULAIRE INFORMATION (LABEL+INPUT)      /*/
+/*      Formulaire (Container : label + input)      */
 form div {
     display: flex;
     flex-direction: column;
@@ -422,7 +431,7 @@ form div {
     align-items: self-start;
 }
 
-/*/      FORMULAIRE LABEL      /*/
+/*      Formulaire - Label (texte : Nom, Prénom, Email, Votre message)      */
 form label {
     color: #312E2E;
     font-size: 25px;
@@ -434,7 +443,7 @@ form label {
     margin-left: -10px;
 }
 
-/*/      FORMULAIRE INPUT      /*/
+/*      Formulaire - Box de saisie (input)      */
 form input {
     width: 100%;
     height: 50px;
@@ -446,6 +455,7 @@ form input {
     padding-left: 15px;
 }
 
+/*      Formulaire - Box de saisie du message      */
 form .input-message {
     font-size: 25px;
     font-family: DM Sans;
@@ -457,6 +467,7 @@ form .input-message {
     padding-top: 10px;
 }
 
+/*      Message d'erreur si le champ ne correspond pas au regExp      */
 .formData[data-error]::after {
     content: attr(data-error);
     color: white;
@@ -464,33 +475,31 @@ form .input-message {
     margin-top: 7px;
     text-align: right;
     transition: 0.3s;
-  }
-  .formData[data-error-visible="true"]::after {
+}
+
+.formData[data-error-visible="true"]::after {
     opacity: 1;
-  }
-  .formData[data-error-visible="true"] .text-control {
+}
+
+/*      Champ Invalid - Contour box ROUGE      */
+.formData[data-error-visible="true"] .text-control {
     border: 2px solid red;
-  }
-  
-  .formData[valid] .text-control{
+}
+
+/*      Champ Valide - Contour box VERT      */
+.formData[valid] .text-control {
     border: 2px solid #36b146;
-  }
+}
 
-  
-
-/*/--------------------------------------------------------------------------/*/
-
-
-
-  /*/      RESPONSIVE MEDIAS MOBIL-TABLETTE      /*/
-
-
+/*-----------      RESPONSIVE PC      -----------*/
 @media screen and (max-device-width: 1024px) {
 
+    /*      Logo      */
     .logo {
         block-size: 4em;
     }
 
+    /*      Photo de profil du photographe      */
     .photograph-img {
         height: 240px;
         width: 240px;
@@ -498,38 +507,44 @@ form .input-message {
         margin-top: -52px;
     }
 
+    /*-----------      h2 "Trier par" avant menu déroulant     -----------*/
     .trier-par {
         font-size: 20px;
         margin-top: 45px;
     }
 
+    /*-----------      Menu déroulant     -----------*/
     nav {
         width: 155px;
         height: 50px;
         margin-top: 35px;
     }
 
-    .firstchoice a {
-        font-size: 18px;
-        margin-left: 5px;
+    /*      Choix du menu déroulant      */
+    .sort-by {
+        width: 162px;
     }
 
+    /*-----------      Galerie du photographe     -----------*/
     #photograph-medias {
         grid-template-columns: 1fr 1fr;
         margin-left: 150px;
         margin-top: 120px;
     }
 
+    /*      Box - Photo de la galerie      */
     .photograph-media {
         margin-right: 100px;
         margin-bottom: 30px;
     }
 
+    /*      Photo de la galerie      */
     .photograph-picture {
         width: 450px;
         height: 400px;
     }
 
+    /*      Infos : Titre et nombre de likes de la photo      */
     .about-picture {
         padding: 5px 5px 0px 5px;
         margin-left: 0px;
@@ -537,86 +552,90 @@ form .input-message {
         width: auto;
     }
 
+    /*      Titre de la photo      */
     .picture-title {
         font-size: 25px;
     }
 
+    /*      Nombre de likes de la photo      */
     .picture-likes {
         font-size: 25px;
         width: 71px;
         margin-right: -10px;
     }
 
+    /*-----------      Bannière de likes     -----------*/
     #likes-banner {
         width: 360px;
         height: 70px;
     }
 
+    /*      Infos photographe      */
     #banner-display {
         margin-top: 5px;
     }
 
+    /*      Nombre total de likes      */
     #total-likes {
         font-size: 26px;
         margin-right: 7px;
     }
 
+    /*      Icon coeur      */
     .like-icon-banner {
-        font-size: 24px;  
+        font-size: 24px;
     }
 
+    /*      Prix du photographe/jour      */
     #price-banner {
         font-size: 24px;
         padding-right: 10px;
     }
 
-    #lightbox-modal {
-        padding-top: 0px;
-        align-items: center;
-    }
-
-    #left {
-        height: 30px;
-        margin-top: 0px;
-    }
-
-    #right {
-        margin-top: 305px;
-    }
-
+    /*-----------      Modal - Photos de la galerie agrandi     -----------*/
+    /*      Titre de la photo      */
     .title-picture-lightbox {
         font-size: 29px;
     }
 }
 
+/*-----------      RESPONSIVE TABLET      -----------*/
 @media screen and (max-device-width: 768px) {
 
+    /*-----------      Banniére du photographe     -----------*/
     .photograph-header {
         height: 390px;
     }
 
+    /*      Nom du photographe      */
     .photograph-name {
         font-size: 80px;
     }
 
+    /*      Ville du photographe      */
     .photograph-city {
         font-size: 33px;
     }
 
+    /*      Description du photographe      */
     .photograph-desc {
         font-size: 23px;
     }
 
+    /*---      BLOC 2 - Contacté le photographe      ---*/
     .photograph-header-bloc-2 {
         display: block;
         margin-top: -116px;
         margin-left: 50px;
     }
 
+    /*      Boutton "Contact"      */
     #btn-contact {
         margin-top: 130px;
     }
 
+    /*---      BLOC 3 - Photo de profil du photographe      ---*/
+    /*      Photo de profil du photographe      */
     .photograph-img {
         height: 300px;
         width: 300px;
@@ -624,165 +643,207 @@ form .input-message {
         margin-top: -174px;
     }
 
+    /*-----------      h2 "Trier par" avant menu déroulant     -----------*/
     .trier-par {
         font-size: 28px;
         margin-top: 50px;
     }
 
+    /*-----------      Menu déroulant     -----------*/
     nav {
-        width: 190px;
+        width: 162px;
         height: 57px;
         margin-left: 234px;
         margin-top: 36px;
     }
 
-    .firstchoice a {
+    /*       Bouton principal du menu déroulant      */
+    #menu-button {
+        width: 180px;
+        height: 67px;
+        padding-top: 10px;
+    }
+
+    /*      Choix du menu déroulant      */
+    .sort-by {
+        width: 180px;
+        margin-bottom: 4px;
+        padding-right: 20px;
         font-size: 22px;
-        margin-left: 10px;
     }
 
-    .white-line {
-        width: 140px;
-        margin-top: 14px;
-        margin-left: 10px;
+    /*      Deuxième parti du menu déroulant      */
+    #second-part-menu {
+        width: 182px;
     }
 
+    /*-----------      Galerie du photographe     -----------*/
     #photograph-medias {
         margin-left: 104px;
         margin-top: 130px;
     }
 
+    /*      Box - Photo de la galerie      */
     .photograph-media {
         margin-bottom: 50px;
     }
 
+    /*      Photos de la galerie      */
     .photograph-picture {
         width: 500px;
         height: 450px;
     }
 
+    /*      Infos : Titre et nombre de likes de la photo      */
     .about-picture {
         padding: 10px 5px 0px 5px;
     }
 
+    /*      Titre de la photo      */
     .picture-title {
         font-size: 30px;
     }
 
+    /*      Nombre de likes de la photo      */
     .picture-likes {
         width: 85px;
         font-size: 30px;
         margin-right: -10px;
     }
 
+    /*-----------      Bannière de likes     -----------*/
     #likes-banner {
         width: 450px;
         height: 85px;
     }
 
+    /*      Infos photographe      */
     #banner-display {
         margin-top: 14px;
     }
 
+    /*      Nombre total de likes      */
     #total-likes {
         font-size: 32px;
         margin-right: 10px;
     }
 
+    /*      Icon coeur      */
     .like-icon-banner {
         font-size: 28px;
     }
 
+    /*      Prix du photographe/jour      */
     #price-banner {
         font-size: 32px;
         padding-right: 32px;
     }
 
+    /*-----------      Modal - Photos de la galerie agrandi     -----------*/
+    /*      Modal - Photo     */
     .picture-lightbox {
         width: 1100px;
         height: 950px;
     }
 
+    /*      Titre de la photo      */
     .title-picture-lightbox {
         font-size: 36px;
     }
 
+    /*      Bloc - icon de fermeture + flêche de droite      */
     .icon-right-lightbox {
         height: 950px;
     }
 
+    /*      Icon flêche de droite      */
     #right {
         margin-top: 405px;
     }
 
+    /*-----------      Modal formulaire de contact     -----------*/
+    /*      Modal form      */
     .modal {
         width: 60%;
     }
 
+    /*      Header - h2 "Contactez-moi"      */
     .modal header h2 {
         font-size: 65px;
     }
 
+    /*      Header - Nom du photographe     */
     #name-profil {
         font-size: 65px;
     }
 
+    /*---      Formulaire de contact      ---*/
     form {
         height: auto;
     }
 
+    /*      Formulaire - Label (texte : Nom, Prénom, Email, Votre message)      */
     form label {
         font-size: 32px;
         padding-top: 17px;
     }
 
+    /*      Formulaire - Box de saisie (input)      */
     form input {
         height: 80px;
         font-size: 30px;
     }
 
+    /*      Formulaire - Box de saisie du message      */
     form .input-message {
         width: 100%;
         height: 140px;
         font-size: 30px;
     }
 
+    /*      Formulaire - Box de saisie taille du texte      */
     .formData {
         font-size: 25px;
     }
 
+    /*      Formulaire - Boutton "Envoyer"      */
     .contact_button {
         margin-top: 30px;
         margin-left: -8px;
     }
-
-
 }
 
+/*-----------      RESPONSIVE MOBIL      -----------*/
 @media screen and (max-device-width: 375px) {
 
+    /*---      Header      ---*/
     header {
         margin-bottom: 120px;
     }
 
+    /*      Lien Logo      */
     .a-for-logo-second-page {
         margin-left: 455px;
     }
 
+    /*      Logo      */
     .logo {
         block-size: 7em;
         margin-top: 100px;
     }
 
+    /*-----------      Banniére du photographe     -----------*/
     .photograph-header {
         height: 1100px;
     }
 
+    /*---      BLOC 1 - Infos du photographe      ---*/
     .photograph-header-bloc-1 {
         padding-top: 490px;
         width: auto;
     }
 
+    /*      Nom du photographe      */
     .photograph-name {
         display: flex;
         place-content: center;
@@ -791,6 +852,7 @@ form .input-message {
         width: auto;
     }
 
+    /*      Ville du photographe      */
     .photograph-city {
         display: flex;
         place-content: center;
@@ -799,6 +861,7 @@ form .input-message {
         width: auto;
     }
 
+    /*      Description du photographe      */
     .photograph-desc {
         display: flex;
         place-content: center;
@@ -807,6 +870,7 @@ form .input-message {
         width: auto;
     }
 
+    /*---      BLOC 2 - Contacté le photographe      ---*/
     .photograph-header-bloc-2 {
         display: flex;
         margin-top: -116px;
@@ -814,6 +878,7 @@ form .input-message {
         margin-left: 0px;
     }
 
+    /*      Boutton "Contact"      */
     #btn-contact {
         margin-top: 151px;
         block-size: 3em;
@@ -822,11 +887,13 @@ form .input-message {
         margin-left: -112px;
     }
 
+    /*---      BLOC 3 - Photo de profil du photographe      ---*/
     .photograph-header-bloc-3 {
         margin-right: 318px;
         margin-top: -640px;
     }
 
+    /*      Photo de profil du photographe      */
     .photograph-img {
         height: 500px;
         width: 500px;
@@ -834,182 +901,208 @@ form .input-message {
         margin-top: -325px;
     }
 
+    /*-----------      h2 "Trier par" avant menu déroulant     -----------*/
     .trier-par {
         font-size: 55px;
         margin-top: 120px;
     }
 
+    /*-----------      Menu déroulant     -----------*/
     nav {
-        margin-left: 350px;
-        width: 347px;
-        height: 110px;
+        margin-left: 352px;
+        width: 375px;
+        height: 140px;
         margin-top: 80px;
+        border-radius: 10px;
     }
 
-    .firstchoice {
-        padding-top: 20px;
-        padding-bottom: 30px;
+    /*       Bouton principal du menu déroulant      */
+    #menu-button {
+        width: 305px;
+        padding-bottom: 5px;
     }
 
-    .firstchoice a {
-        font-size: 45px;
-        margin-left: 17px;
-    }
-    
-    .fa-chevron-down {
-        padding-left: 35px;
+    /*      Deuxième parti du menu déroulant      */
+    #second-part-menu {
+        width: 377px;
+        border-radius: 10px;
+        margin-top: 5px;
     }
 
-    .white-line {
-        margin-top: 29px;
+    /*      Choix du menu déroulant      */
+    .sort-by {
+        font-size: 47px;
+        margin: 35px;
+        margin-left: 25px;
+        padding: 0;
+    }
+
+    /*      Icon menu déroulant      */
+    .fa-chevron-down, .fa-chevron-up {
+        margin-bottom: 5px;
+        padding-left: 48px;
+    }
+
+    /*      Ligne blanche entre les choix      */
+    #white-line {
         margin-left: 20px;
-        width: 225px;
+        margin-right: 20px;
     }
 
-    .secondchoice {
-        padding-top: 53px;
-    }
-
-    .secondchoice a {
-        font-size: 45px;
-        margin-left: 17px;
-    }
-
-    .thirdchoice {
-        padding-top: 55px;
-        padding-bottom: 0px;
-    }
-
-    .thirdchoice a {
-        font-size: 45px;
-        margin-left: 17px;
-    }
-
+    /*-----------      Galerie du photographe     -----------*/
     #photograph-medias {
         display: flex;
         flex-direction: column;
         margin-top: 270px;
     }
 
+    /*      Box - Photo de la galerie      */
     .photograph-media {
         margin-bottom: 120px;
     }
 
+    /*      Photos de la galerie      */
     .photograph-picture {
         width: 1135px;
         height: 1085px;
     }
 
+    /*      Infos : Titre et nombre de likes de la photo      */
     .about-picture {
         width: 1130px;
         padding-top: 20px;
     }
 
+    /*      Titre de la photo      */
     .picture-title {
         font-size: 60px;
     }
 
+    /*      Nombre de likes de la photo      */
     .picture-likes {
         width: 167px;
         font-size: 60px;
         margin-right: -5px;
     }
 
+    /*      Espace entre le Nombre et l'icon      */
     .like-margin {
         margin-right: 10px;
     }
 
+    /*-----------      Bannière de likes     -----------*/
     #likes-banner {
         width: 760px;
         height: 142px;
         right: 60px;
     }
 
+    /*      Infos photographe      */
     #banner-display {
         margin-top: 42px;
     }
 
+    /*      Nombre total de likes      */
     #total-likes {
         font-size: 60px;
         margin-left: -30px;
         margin-right: 15px;
     }
 
+    /*      Icon coeur      */
     .like-icon-banner {
         font-size: 60px;
     }
 
+    /*      Prix du photographe/jour      */
     #price-banner {
         font-size: 60px;
         padding-right: 50px;
     }
 
+    /*-----------      Modal - Photos de la galerie agrandi     -----------*/
+    /*      Titre de la photo      */
     .title-picture-lightbox {
         font-size: 50px;
         margin-top: 20px;
     }
 
+    /*      Icon flêche de gauche      */
     #left {
         font-size: 6em;
         margin-right: 30px;
         margin-left: -10px;
     }
 
+    /*      Bloc - icon de fermeture + flêche de droite      */
     .icon-right-lightbox {
         margin-left: 30px;
     }
 
+    /*      Icon de fermeture      */
     #close-button {
         font-size: 2em;
     }
 
+    /*      Icon flêche de droite      */
     #right {
         font-size: 2em;
         margin-top: 343px;
     }
 
+    /*-----------      Modal formulaire de contact     -----------*/
+    /*      Modal form      */
     .modal {
         height: auto;
         width: 85%;
     }
 
+    /*      Header - h2 "Contactez-moi"      */
     .modal header h2 {
         font-size: 110px;
     }
 
+    /*      Header - Nom du photographe     */
     #name-profil {
         font-size: 110px;
     }
 
+    /*      Header - Icon de fermeture      */
     #close-img-button {
         block-size: 4em;
     }
 
+    /*---      Formulaire de contact      ---*/
     #contact_form {
         height: auto;
     }
 
+    /*      Formulaire (Container : label + input)      */
     .formData {
         padding-left: 27px;
         font-size: 41px;
     }
 
+    /*      Formulaire - Label (texte : Nom, Prénom, Email, Votre message)      */
     form label {
         font-size: 60px;
     }
 
+    /*      Formulaire - Box de saisie (input)      */
     form input {
         width: 95%;
         height: 125px;
         font-size: 50px;
     }
 
+    /*      Formulaire - Box de saisie du message      */
     form .input-message {
         width: 95%;
         height: 280px;
         font-size: 50px;
     }
 
+    /*      Formulaire - Boutton "Envoyer"      */
     .contact_button {
         width: 325px;
         height: 120px;
