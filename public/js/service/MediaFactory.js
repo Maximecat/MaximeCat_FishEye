@@ -69,7 +69,7 @@ export class MediaFactory {
         return photographMedia;
     }
 
-    //Méthode pour faire apparaitre notre "lightbox-modal" au 'click'
+    // Méthode pour faire apparaitre notre "lightbox-modal" au 'click'
     displayDialog() {
 
         const lightBoxModal = document.getElementById("lightbox-modal");
