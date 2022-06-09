@@ -8,7 +8,7 @@ body {
     margin-right: 120px;
 }
 
-/*///////      HEADER      ///////*/
+/*-----------      HEADER      -----------*/
 header {
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@ header {
     align-items: center;
 }
 
-/*/      LOGO      /*/
+/*      Lien Logo      */
 .a-for-logo {
     height: 50px;
     width: 50px;
@@ -24,35 +24,40 @@ header {
     margin-left: 130px;
 }
 
+/*      Logo      */
 .logo {
     height: 60px;
-    /* margin-left: 130px; */
-    /* margin-top: 50px; */
     margin-top: 0px;
     align-content: center;
 }
 
-/*/      ESPACE LOGO-TITRE      /*/
+/*      Espace header     */
 .space-header {
     margin-left: 40px;
     margin-right: 40px;
 }
 
-/*/      TITRE "Nos photographes"      /*/
+/*     Titre "Nos photographes"     */
 h1 {
     color: #901C1C;
     margin-right: 100px;
     margin-bottom: -35px;
 }
 
-/*///////      LISTE DES PHOTOGRAPHES      ///////*/
+/*-----------      MAIN - Listes des photographes      -----------*/
+/*      Container des photographes      */
 #photographers-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 100px;
 }
 
-/*/      PROFIL PHOTOGRAPHE      /*/
+/*      Lien page du photographe      */
+a {
+    text-decoration: none;
+}
+
+/*      Profil du photographe      */
 #photographers-container article {
     justify-self: center;
     display: flex;
@@ -63,7 +68,7 @@ h1 {
     padding-top: 50px;
 }
 
-/*/      IMAGE PROFIL PHOTOGRAPHE      /*/
+/*      Photo de profil du photographe      */
 #photographers-container img {
     height: 240px;
     width: 240px;
@@ -71,11 +76,7 @@ h1 {
     border-radius: 120px;
 }
 
-a {
-    text-decoration: none;
-}
-
-/*/      NOM PROFIL PHOTOGRAPHE      /*/
+/*      Nom du photographe      */
 .nom {
     color: #d3573c;
     font-size: 45px;
@@ -86,7 +87,7 @@ a {
     text-align: center;
 }
 
-/*/      VILLE PROFIL PHOTOGRAPHE      /*/
+/*      Ville du photographe      */
 .ville {
     color: #901C1C;
     font-weight: 600;
@@ -95,7 +96,7 @@ a {
     text-align: center;
 }
 
-/*/      DESCRIPTION PROFIL PHOTOGRAPHE     /*/
+/*      Description du photographe      */
 .description {
     color: black;
     font-weight: 500;
@@ -104,7 +105,7 @@ a {
     text-align: center;
 }
 
-/*/      PRIX PROFIL PHOTOGRAPHE      /*/
+/*      Prix/jour du photographe      */
 .prix {
     color: #525252;
     font-size: 13px;
@@ -112,7 +113,9 @@ a {
     text-align: center;
 }
 
+/*-----------      RESPONSIVE PC      -----------*/
 @media screen and (max-device-width: 1200px) {
+    
     body {
         width: 100%;
         margin: auto;
@@ -120,6 +123,7 @@ a {
         min-width: 768px;
     }
 
+    /*      Container des photographes      */
     #photographers-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -129,23 +133,28 @@ a {
         margin-right: 20px;
     }
 
+    /*      Nom du photographe      */
     .nom {
         width: 375px;
         font-size: 40px;
     }
 }
 
+/*-----------      RESPONSIVE TABLET      -----------*/
 @media screen and (max-device-width: 768px) {
 
+    /*     Titre "Nos photographes"     */
     h1 {
         font-size: 24px;
         padding-top: 15px;
     }
 
+    /*      Container des photographes      */
     #photographers-container {
         grid-template-columns: 1fr;
     }
 
+    /*      Photo de profil du photographe      */
     #photographers-container img {
         height: 350px;
         width: 350px;
@@ -154,30 +163,37 @@ a {
         margin-top: 50px;
     }
 
+    /*      Nom du photographe      */
     .nom {
         width: 100%;
         font-size: 47px;
     }
 
+    /*      Ville du photographe      */
     .ville {
         font-size: 22px;
     }
-    
+
+    /*      Description du photographe      */
     .description {
         font-size: 20px;
     }
-    
+
+    /*      Prix/jour du photographe      */
     .prix {
         font-size: 17px;
     }
 }
 
+/*-----------      RESPONSIVE MOBIL      -----------*/
 @media screen and (max-device-width: 375px) {
+
     header {
         display: flex;
         flex-direction: column;
     }
 
+    /*      Lien Logo      */
     .a-for-logo {
         height: 50px;
         width: 50px;
@@ -185,17 +201,20 @@ a {
         margin-left: 130px;
     }
 
+    /*      Logo      */
     .logo {
         margin-left: -260px;
         block-size: 7em;
     }
 
+    /*     Titre "Nos photographes"     */
     h1 {
         font-size: 35px;
         margin-top: 80px;
         margin-left: 105px;
     }
 
+    /*      Photo de profil du photographe      */
     #photographers-container img {
         height: 440px;
         width: 440px;
@@ -204,21 +223,24 @@ a {
         margin-top: 60px;
     }
 
+    /*      Nom du photographe      */
     .nom {
         width: 100%;
         font-size: 65px;
     }
 
+    /*      Ville du photographe      */
     .ville {
         font-size: 30px;
     }
     
+    /*      Description du photographe      */
     .description {
         font-size: 25px;
     }
     
+    /*      Prix/jour du photographe      */
     .prix {
         font-size: 26px;
     }
-    
 }
