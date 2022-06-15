@@ -80,7 +80,7 @@ function displayMedias(mediasFromFetch, criteria = "likes", sortLabel = "Popular
   // Boucle sur la liste des medias, création d'un nouvelle card pour chaque medias
   for (const media of medias) {
     const mediaFactory = new MediaFactory(media);
-    photographMedias.appendChild(mediaFactory.createMediaCard());
+    photographMedias.appendChild(mediaFactory.createMediaCard(closeMenu));
   }
 
   // Utilisation de la fonction pour faire apparaître le nombre total de likes
@@ -254,6 +254,7 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
 
 // Fonction d'affichage de la modal du formulaire et du nom du photographe assosié
 function displayModalForm(photographer) {
+  closeMenu();
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
 
