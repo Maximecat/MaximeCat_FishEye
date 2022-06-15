@@ -104,20 +104,20 @@ function displayMedias(mediasFromFetch, criteria = "likes", sortLabel = "Popular
 function setSortEvent() {
   // Récupération des boutons du menu déroulant
   const sortChoices = document.getElementsByClassName("sortBy");
-  // Boucle dans les choix
+
   for (const choice of sortChoices) {
     // Ecoute du bouton, au click sur le choix, fermeture du menu
     choice.addEventListener('click', (e) => {
-      
+
       closeMenu();
-      
+
       if (e.target.innerText) {
         displayMedias(medias, e.target.id, e.target.innerText)
       }
     })
   }
 }
-// Utilisation de la fonction d'apparition des medias trier
+
 setSortEvent();
 
 // Fonction de tri des medias
@@ -255,6 +255,7 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
 // Fonction d'affichage de la modal du formulaire et du nom du photographe assosié
 function displayModalForm(photographer) {
   closeMenu();
+  focusTrap('#close-img-button, #form-prenom, #form-nom, #form-email, #form-message, .contact_button');
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
 
@@ -324,4 +325,38 @@ function nextMedia(direction) {
 
   pictureLightBox[0].id = medias[nextIndex].id;
   titlePictureLightBox[0].innerText = medias[nextIndex].title;
+}
+
+// Fonction accessibilité modals (media, formulaire)
+function focusTrap(focusableElements) {
+  const  focusableElements =
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const modal = document.querySelector('#contact_modal'); // select the modal by it's id
+
+  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+  const focusableContent = modal.querySelectorAll(focusableElements);
+  const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+
+  document.addEventListener('keydown', function (e) {
+    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) { // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+        e.preventDefault();
+      }
+    } else { // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus(); // add focus for the first focusable element
+        e.preventDefault();
+      }
+    }
+  });
+
+  firstFocusableElement.focus();
 }
