@@ -35,19 +35,19 @@
         <h2 class="trier-par">Trier par</h2>
 
         <nav>
-            <button id="menu-button" class="sort-by">
+            <button id="menu-button" class="sort-by" tabindex="3">
                 <span id="sort-choice"></span>
                 <i class="fa-solid fa-chevron-down"></i>
             </button>
-            <div id="second-part-menu">
-                <button class="sortBy sort-by">
+            <div id="second-part-menu" aria-hidden="true">
+                <button class="sortBy sort-by" tabindex="3">
                     <span id="likes">Popularité</span>
                     <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <div id="white-line"></div>
-                <button id="date" class="sortBy sort-by">Date</button>
+                <button id="date" class="sortBy sort-by" tabindex="3">Date</button>
                 <div id="white-line"></div>
-                <button id="title" class="sortBy sort-by">Titre</button>
+                <button id="title" class="sortBy sort-by" tabindex="3">Titre</button>
             </div>
         </nav>
 
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div id="lightbox-modal">
+        <div id="lightbox-modal" aria-hidden="true">
             <i id="left" class="fa-solid fa-chevron-left"></i>
             <div class="lightbox-medias">
                 <div id="media-container-lightbox"></div>
@@ -82,7 +82,7 @@
 
     </main>
 
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true">
         <div class="modal">
             <header>
                 <div>
