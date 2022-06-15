@@ -8,7 +8,7 @@ export class MediaFactory {
     }
 
     // Méthode pour crée une card affichant un media
-    createMediaCard() {
+    createMediaCard(closeMenu) {
         const photographMedia = document.createElement('div');
         photographMedia.className = "photograph-media";
 
@@ -58,6 +58,7 @@ export class MediaFactory {
         photographMedia.appendChild(aboutPicture);
 
         photographPicture.addEventListener('click', () => {
+            closeMenu();
             this.displayDialog();
         });
         // Accessibilité ------- la modale des medias agrandi est accessible avec 'Espace' ou 'Entrer'
