@@ -255,7 +255,10 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
 // Fonction d'affichage de la modal du formulaire et du nom du photographe assosié
 function displayModalForm(photographer) {
   closeMenu();
-  focusTrap('#close-img-button, #form-prenom, #form-nom, #form-email, #form-message, .contact_button');
+
+  focusTrap(document.querySelector('#contact_modal'), 'img, input, textarea, button');
+  // focusTrap('#close-img-button, #form-prenom, #form-nom, #form-email, #form-message, .contact_button');
+
   const contactModal = document.getElementById('contact_modal');
   contactModal.style.display = "block";
 
@@ -328,15 +331,10 @@ function nextMedia(direction) {
 }
 
 // Fonction accessibilité modals (media, formulaire)
-function focusTrap(focusableElements) {
-  const  focusableElements =
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-  const modal = document.querySelector('#contact_modal'); // select the modal by it's id
-
+function focusTrap(modal, focusableElements) {
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
   const focusableContent = modal.querySelectorAll(focusableElements);
   const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
-
 
   document.addEventListener('keydown', function (e) {
     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
@@ -344,6 +342,11 @@ function focusTrap(focusableElements) {
     if (!isTabPressed) {
       return;
     }
+
+    // Fermeture avec 'Echap'
+    // if (e.keyCode === 27){
+    //   closeModalForm();
+    // }
 
     if (e.shiftKey) { // if shift key pressed for shift + tab combination
       if (document.activeElement === firstFocusableElement) {
