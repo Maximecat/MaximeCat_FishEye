@@ -399,10 +399,12 @@ nav * {
 }
 
 /*      Header - Icon de fermeture      */
-.modal header img {
+.modal header button {
     cursor: pointer;
     height: fit-content;
     padding-top: 15px;
+    background-color: #DB8876;
+    border: #DB8876;
 }
 
 /*      Header - Nom du photographe     */
