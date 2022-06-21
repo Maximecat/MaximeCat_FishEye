@@ -1,9 +1,11 @@
 import { Video } from "../models/Video.js"
 import { Image } from "../models/Image.js"
+import { focusTrap } from "../controllers/photographerPage.js";
+import { closeModal } from "../controllers/photographerPage.js";
 
 export class MediaFactory {
 
-    constructor(media){
+    constructor(media) {
         this.media = media
     }
 
@@ -43,7 +45,7 @@ export class MediaFactory {
         heartLikes.id = "heart-likes-" + this.media.id;
         heartLikes.tabIndex = 3;
 
-        photographPicture.src = "public/images/" + this.media.photographerId + "/" + (this.media.image|| this.media.video)
+        photographPicture.src = "public/images/" + this.media.photographerId + "/" + (this.media.image || this.media.video)
         photographPicture.id = "thumb-" + this.media.id;
 
         pictureTitle.innerText = this.media.title;
@@ -63,7 +65,7 @@ export class MediaFactory {
         });
         // Accessibilité ------- la modale des medias agrandi est accessible avec 'Espace' ou 'Entrer'
         photographPicture.addEventListener('keypress', (e) => {
-            if(e.code === "Space" || e.code === "Enter") {
+            if (e.code === "Space" || e.code === "Enter") {
                 this.displayDialog();
             }
         });
@@ -87,11 +89,13 @@ export class MediaFactory {
         } else if (this.media instanceof Video) {
             mediaToDisplay = this.createVideo();
         }
-        
+
         mediaContainerLightBox.appendChild(mediaToDisplay);
 
         const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
         titlePictureLightBox[0].innerText = this.media.title;
+
+        focusTrap(document.querySelector('lightbox-modal'), 'i, h2', closeModal);
     }
 
     // Méthode pour crée la balise 'img' dans le cas ou le media est une Image
@@ -102,7 +106,7 @@ export class MediaFactory {
         mediaToDisplay.alt = "Photo de :" + this.media.image;
         mediaToDisplay.id = this.media.id;
         mediaToDisplay.classList.add("picture-lightbox");
-        
+
         return mediaToDisplay;
     }
 
