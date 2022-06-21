@@ -272,7 +272,7 @@ function closeModalForm() {
 }
 
 // Fonction de fermeture de la modal des medias agrandi
-function closeModal() {
+export function closeModal() {
   const modal = document.getElementById('lightbox-modal');
   modal.style.display = "none";
 }
@@ -330,7 +330,7 @@ function nextMedia(direction) {
 }
 
 // Fonction accessibilité modals (media, formulaire)
-function focusTrap(modal, focusableElements, closeFunction) {
+export function focusTrap(modal, focusableElements, closeFunction) {
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
   const focusableContent = modal.querySelectorAll(focusableElements);
   const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
