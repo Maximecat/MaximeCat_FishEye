@@ -306,14 +306,28 @@ nav * {
 }
 
 /*      Icon flêche de gauche      */
+
+#left {
+    background: none;
+    border: none;
+    height: 60px;
+    width: 50px;
+    margin-top: 340px;
+    margin-right: 20px;
+}
+
 .fa-chevron-left {
+    font-size: 4em;
     margin-right: 35px;
-    font-size: 48px;
-    margin-top: 351px;
     color: #911C1C;
 }
 
 /*      Photo      */
+
+#box-acces {
+    background: none;
+    border: none;
+}
 .picture-lightbox {
     width: 900px;
     height: 750px;
@@ -326,6 +340,7 @@ nav * {
     width: 50%;
     margin: 0px;
     margin-top: 10px;
+    margin-left: 5px;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
@@ -339,19 +354,34 @@ nav * {
     display: flex;
     flex-direction: column;
     height: 750px;
-    margin-left: 35px;
+    margin-left: 25px;
     font-size: 48px;
 }
 
 /*      Icon de fermeture      */
+
+#close-button {
+    background: none;
+    border: none;
+}
+
 .fa-xmark {
+    font-size: 4em;
     color: #911C1C;
 }
 
 /*      Icon flêche de droite      */
+
+#right {
+    background: none;
+    border: none;
+    margin-top: 290px;
+}
+
 .fa-chevron-right {
+    margin: 0;
+    font-size: 4em;
     color: #911C1C;
-    margin-top: 303px;
 }
 
 /*-----------      Modal formulaire de contact     -----------*/
@@ -753,6 +783,11 @@ form .input-message {
         font-size: 36px;
     }
 
+    /*      Icon flêche de gauche      */
+    #left {
+        margin-top: 435px;
+    }
+
     /*      Bloc - icon de fermeture + flêche de droite      */
     .icon-right-lightbox {
         height: 950px;
@@ -760,7 +795,7 @@ form .input-message {
 
     /*      Icon flêche de droite      */
     #right {
-        margin-top: 405px;
+        margin-top: 375px;
     }
 
     /*-----------      Modal formulaire de contact     -----------*/
@@ -1031,9 +1066,13 @@ form .input-message {
 
     /*      Icon flêche de gauche      */
     #left {
-        font-size: 6em;
+        font-size: 70px;
         margin-right: 30px;
-        margin-left: -10px;
+        margin-top: 400px;
+    }
+
+    .fa-chevron-left {
+        font-size: 70px;
     }
 
     /*      Bloc - icon de fermeture + flêche de droite      */
@@ -1043,13 +1082,22 @@ form .input-message {
 
     /*      Icon de fermeture      */
     #close-button {
-        font-size: 2em;
+        font-size: 70px;
+    }
+
+    .fa-xmark {
+        font-size: 70px;
     }
 
     /*      Icon flêche de droite      */
     #right {
-        font-size: 2em;
-        margin-top: 343px;
+        font-size: 70px;
+        margin-top: 325px;
+    }
+
+    .fa-chevron-right {
+        font-size: 70px;
+        margin: 0;
     }
 
     /*-----------      Modal formulaire de contact     -----------*/
