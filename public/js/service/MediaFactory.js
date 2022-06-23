@@ -1,7 +1,5 @@
 import { Video } from "../models/Video.js"
 import { Image } from "../models/Image.js"
-import { focusTrap } from "../controllers/photographerPage.js";
-import { closeModal } from "../controllers/photographerPage.js";
 
 export class MediaFactory {
 
@@ -10,7 +8,7 @@ export class MediaFactory {
     }
 
     // Méthode pour crée une card affichant un media
-    createMediaCard(closeMenu) {
+    createMediaCard(closeMenu, focusTrap) {
         const photographMedia = document.createElement('div');
         photographMedia.className = "photograph-media";
 
@@ -60,13 +58,12 @@ export class MediaFactory {
         photographMedia.appendChild(aboutPicture);
 
         photographPicture.addEventListener('click', () => {
-            closeMenu();
-            this.displayDialog();
+            this.displayDialog(closeMenu, focusTrap);
         });
         // Accessibilité ------- la modale des medias agrandi est accessible avec 'Espace' ou 'Entrer'
         photographPicture.addEventListener('keypress', (e) => {
             if (e.code === "Space" || e.code === "Enter") {
-                this.displayDialog();
+                this.displayDialog(closeMenu, focusTrap);
             }
         });
 
@@ -74,8 +71,8 @@ export class MediaFactory {
     }
 
     // Méthode pour faire apparaitre notre "lightbox-modal" au 'click'
-    displayDialog() {
-
+    displayDialog(closeMenu, focusTrap) {
+        closeMenu();
         const lightBoxModal = document.getElementById("lightbox-modal");
         lightBoxModal.style.display = "flex";
 
@@ -95,7 +92,9 @@ export class MediaFactory {
         const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
         titlePictureLightBox[0].innerText = this.media.title;
 
-        focusTrap(document.querySelector('lightbox-modal'), 'i, h2', closeModal);
+        setTimeout(() =>{ 
+            focusTrap(document.querySelector('#lightbox-modal'), 'button', () => null);
+        }, 1000);
     }
 
     // Méthode pour crée la balise 'img' dans le cas ou le media est une Image
