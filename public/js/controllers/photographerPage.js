@@ -1,8 +1,7 @@
 import { MediaFactory } from "../service/MediaFactory.js";
+import { closeMenu, closeModal, closeModalForm, displayModalForm, focusTrap, nextMedia, openMenu } from "../service/modalService.js";
 import { PhotographerFactory } from "../service/PhotographerFactory.js";
 import { getPhotographer, getMedias } from "../service/service.js";
-import { Video } from "../models/Video.js";
-import { Image } from "../models/Image.js";
 
 // Création d'un tableau pour les médias
 let medias = [];
@@ -30,18 +29,6 @@ left.addEventListener('click', () => nextMedia('left'));
 // Application de la fonction d'ouverture du menu (nav) au click sur le bouton
 const iconOpenMenu = document.getElementById('menu-button');
 iconOpenMenu.addEventListener('click', openMenu);
-
-// Fonction d'ouverture du menu (nav)
-function openMenu() {
-  const secondBloc = document.getElementById('second-part-menu');
-  secondBloc.style.display = "flex";
-}
-
-// Fonction de fermeture du menu (nav)
-function closeMenu() {
-  const secondBloc = document.getElementById('second-part-menu');
-  secondBloc.style.display = "none";
-}
 
 // Fonction de récupération d'un photographe par son id
 getPhotographer(photographerId)
@@ -112,7 +99,7 @@ function setSortEvent() {
       closeMenu();
 
       if (e.target.innerText) {
-        displayMedias(medias, e.target.id, e.target.innerText)
+        displayMedias(medias, e.target.id, e.target.innerText.trim())
       }
     })
   }
@@ -250,117 +237,4 @@ function displayIsValidInput(isValid, inputElement, errorMessage) {
     inputElement.parentElement.removeAttribute("data-error");
     inputElement.parentElement.setAttribute("valid", true);
   }
-}
-
-// Fonction d'affichage de la modal du formulaire et du nom du photographe assosié
-function displayModalForm(photographer) {
-  closeMenu();
-
-  const contactModal = document.getElementById('contact_modal');
-  contactModal.style.display = "block";
-
-  const nameProfil = document.getElementById('name-profil');
-  nameProfil.innerText = photographer.name;
-
-  focusTrap(document.querySelector('#contact_modal'), 'input, textarea, button', closeModalForm);
-}
-
-// Fonction de fermeture de la modal du formulaire
-function closeModalForm() {
-  const contactModal = document.getElementById('contact_modal');
-  contactModal.style.display = "none";
-}
-
-// Fonction de fermeture de la modal des medias agrandi
-function closeModal() {
-  const modal = document.getElementById('lightbox-modal');
-  modal.style.display = "none";
-}
-
-// Fonction pour parcourir les medias de gauche a droite avec les icons de flêche de notre modal
-function nextMedia(direction) {
-  const pictureLightBox = document.getElementsByClassName("picture-lightbox");
-  const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
-  const mediaContainer = document.getElementById('media-container-lightbox');
-
-  const index = medias.findIndex(function (media) {
-    return media.id == pictureLightBox[0].id;
-  })
-
-  let nextIndex;
-
-  if (direction === 'right') {
-    if (index === medias.length - 1) {
-      nextIndex = 0;
-    } else {
-      nextIndex = index + 1;
-    }
-  } else if (direction === 'left') {
-    if (index === 0) {
-      nextIndex = medias.length - 1;
-    } else {
-      nextIndex = index - 1;
-    }
-  }
-
-  const mediaFactory = new MediaFactory(medias[nextIndex]);
-
-  // Si c'est une Image
-  if (medias[index] instanceof Image) {
-    if (medias[nextIndex] instanceof Image) {
-      pictureLightBox[0].src = "public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].image;
-    } else {
-      mediaContainer.innerHTML = '';
-      const videoElement = mediaFactory.createVideo();
-      mediaContainer.appendChild(videoElement);
-    }
-    // Si c'est une Vidéo
-  } else if (medias[index] instanceof Video) {
-    if (medias[nextIndex] instanceof Video) {
-      pictureLightBox[0].firstChild().src = "public/images/" + medias[nextIndex].photographerId + "/" + medias[nextIndex].video;
-    } else {
-      mediaContainer.innerHTML = '';
-      const photoElement = mediaFactory.createPhoto();
-      mediaContainer.appendChild(photoElement);
-    }
-  }
-
-  pictureLightBox[0].id = medias[nextIndex].id;
-  titlePictureLightBox[0].innerText = medias[nextIndex].title;
-}
-
-// Fonction accessibilité modals (media, formulaire)
-function focusTrap(modal, focusableElements, closeFunction) {
-  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
-  const focusableContent = modal.querySelectorAll(focusableElements);
-  const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
-
-  document.addEventListener('keydown', function (e) {
-    let isTabPressed = e.key === 'Tab';
-    let isEscapePressed = e.key === 'Escape';
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (isEscapePressed) {
-      closeFunction();
-      document.removeEventListener('keydown', this);
-      return;
-    }
-
-    if (e.shiftKey) { // if shift key pressed for shift + tab combination
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement.focus(); // add focus for the last focusable element
-        e.preventDefault();
-      }
-    } else { // if tab key is pressed
-      if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus(); // add focus for the first focusable element
-        e.preventDefault();
-      }
-    }
-  });
-
-  firstFocusableElement.focus();
 }
