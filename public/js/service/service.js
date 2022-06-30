@@ -25,7 +25,6 @@ export function getPhotographer(photographerId) {
 
 // Fonction de récupération des medias
 export function getMedias(photographerId) {
-
     // Utilisation de la méthode filter
     return fetch('public/datas/datas.json')
         .then((response) => response.json())
