@@ -1,5 +1,6 @@
 import { Video } from "../models/Video.js";
 import { Image } from "../models/Image.js";
+import { MediaFactory } from "./MediaFactory.js";
 
 // Fonction d'affichage de la modal du formulaire et du nom du photographe assosié
 export function displayModalForm(photographer) {
