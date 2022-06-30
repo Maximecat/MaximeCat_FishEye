@@ -1,5 +1,6 @@
 import { Video } from "../models/Video.js"
 import { Image } from "../models/Image.js"
+import { closeModal } from "./modalService.js";
 
 export class MediaFactory {
 
@@ -92,9 +93,7 @@ export class MediaFactory {
         const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
         titlePictureLightBox[0].innerText = this.media.title;
 
-        setTimeout(() =>{ 
-            focusTrap(document.querySelector('#lightbox-modal'), 'button', () => null);
-        }, 1000);
+        focusTrap(document.querySelector('#lightbox-modal'), 'button', closeModal);
     }
 
     // Méthode pour crée la balise 'img' dans le cas ou le media est une Image
