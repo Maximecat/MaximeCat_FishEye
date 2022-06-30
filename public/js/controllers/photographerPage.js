@@ -20,11 +20,11 @@ xmarkIcon.addEventListener('click', closeModal);
 
 // Application de la fonction de parcours des médias (par la droite) au click sur l'icon 'flêche de droite'
 const right = document.getElementById('right');
-right.addEventListener('click', () => nextMedia('right'));
+right.addEventListener('click', () => nextMedia('right', medias));
 
 // Application de la fonction de parcours des médias (par la gauche) au click sur l'icon 'flêche de gauche'
 const left = document.getElementById('left');
-left.addEventListener('click', () => nextMedia('left'));
+left.addEventListener('click', () => nextMedia('left', medias));
 
 // Application de la fonction d'ouverture du menu (nav) au click sur le bouton
 const iconOpenMenu = document.getElementById('menu-button');
