@@ -27,7 +27,7 @@ export function closeModal() {
 }
 
 // Fonction pour parcourir les medias de gauche a droite avec les icons de flêche de notre modal
-export function nextMedia(direction) {
+export function nextMedia(direction, medias) {
     const pictureLightBox = document.getElementsByClassName("picture-lightbox");
     const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
     const mediaContainer = document.getElementById('media-container-lightbox');
