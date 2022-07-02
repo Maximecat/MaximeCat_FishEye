@@ -8,6 +8,7 @@ export function displayModalForm(photographer) {
 
     const contactModal = document.getElementById('contact_modal');
     contactModal.style.display = "block";
+    contactModal.ariaHidden = "false";
 
     const nameProfil = document.getElementById('name-profil');
     nameProfil.innerText = photographer.name;
@@ -30,6 +31,7 @@ export function closeModal() {
 // Fonction pour parcourir les medias de gauche a droite avec les icons de flêche de notre modal
 export function nextMedia(direction, medias) {
     const pictureLightBox = document.getElementsByClassName("picture-lightbox");
+    pictureLightBox.ariaHidden = "false";
     const titlePictureLightBox = document.getElementsByClassName("title-picture-lightbox");
     const mediaContainer = document.getElementById('media-container-lightbox');
 
@@ -119,9 +121,11 @@ export function focusTrap(modal, focusableElements, closeFunction) {
 export function openMenu() {
     const secondBloc = document.getElementById('second-part-menu');
     secondBloc.style.display = "flex";
+    secondBloc.ariaHidden = "false";
     const firstSort = document.getElementsByClassName('sortBy')[0];
     if (firstSort) {
         firstSort.focus();
+
     }
     focusTrap(document.querySelector('#second-part-menu'), 'button', closeMenu)
 }
