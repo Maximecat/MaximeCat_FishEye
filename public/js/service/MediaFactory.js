@@ -21,8 +21,9 @@ export class MediaFactory {
             photographPicture = document.createElement('video');
         }
 
+
         photographPicture.className = "photograph-picture";
-        photographPicture.alt = "Photo de : " + this.media.title;
+        photographPicture.alt = "Picture called " + this.media.title + ", you can enlarge this picture and like below";
         photographPicture.tabIndex = 3;
 
         const aboutPicture = document.createElement('div');
@@ -31,6 +32,7 @@ export class MediaFactory {
         const pictureTitle = document.createElement('div');
         pictureTitle.className = "picture-title";
         pictureTitle.tabIndex = 3;
+        pictureTitle.ariaLabel = "Title " + this.media.title;
 
         const pictureLikes = document.createElement('div');
         pictureLikes.className = "picture-likes";
@@ -43,6 +45,7 @@ export class MediaFactory {
         heartLikes.className = "fa-solid fa-heart like-icon";
         heartLikes.id = "heart-likes-" + this.media.id;
         heartLikes.tabIndex = 3;
+        heartLikes.ariaLabel = this.media.likes + " likes, you can like this picture";
 
         photographPicture.src = "public/images/" + this.media.photographerId + "/" + (this.media.image || this.media.video)
         photographPicture.id = "thumb-" + this.media.id;
@@ -80,6 +83,10 @@ export class MediaFactory {
         const mediaContainerLightBox = document.getElementById("media-container-lightbox");
         mediaContainerLightBox.innerHTML = null;
 
+        if(lightBoxModal.style.display = "flex") {
+            lightBoxModal.ariaHidden = "false";
+        }
+
         let mediaToDisplay;
 
         if (this.media instanceof Image) {
@@ -101,8 +108,8 @@ export class MediaFactory {
         const mediaToDisplay = document.createElement('img');
 
         mediaToDisplay.src = "public/images/" + this.media.photographerId + "/" + this.media.image;
-        mediaToDisplay.alt = "Photo de :" + this.media.image;
         mediaToDisplay.id = this.media.id;
+        mediaToDisplay.alt = this.media.title;
         mediaToDisplay.classList.add("picture-lightbox");
 
         return mediaToDisplay;
