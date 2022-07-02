@@ -5,6 +5,7 @@ export class Photographer {
     city;
     country;
     tagline;
+    taglineEnglish;
     price;
     portrait;
 
@@ -14,6 +15,7 @@ export class Photographer {
         this.city = photographeDatas.city;
         this.country = photographeDatas.country;
         this.tagline = photographeDatas.tagline;
+        this.taglineEnglish = photographeDatas.taglineEnglish;
         this.price = photographeDatas.price;
         this.portrait = photographeDatas.portrait;
     }
