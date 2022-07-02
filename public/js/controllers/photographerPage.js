@@ -44,6 +44,7 @@ getPhotographer(photographerId)
     // Récupération du prix du photographe (affichage dans la bannière de likes) 
     const photographerPrice = document.getElementById('price-banner');
     photographerPrice.innerText = photographer.price + "€ / jour";
+    photographerPrice.ariaLabel = photographer.price + "€ per day";
   })
 
 // Fonction de récupération des médias du photographe par son id
@@ -131,6 +132,7 @@ function displayTotalLikes() {
   const monRes = medias.reduce((cumu, media) => cumu + media.likes, 0)
   const totalLikes = document.getElementById('total-likes');
   totalLikes.innerText = monRes;
+  totalLikes.ariaLabel = monRes + " likes";
 }
 
 // Fonction d'ajout ou de suppression de like
