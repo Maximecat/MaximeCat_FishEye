@@ -13,7 +13,7 @@
 <body>
     <header>
         <a href="index.html" class="a-for-logo-second-page" tabindex="1"><img src="public/assets/logo/logo.png"
-                class="logo" alt="Logo du site FishEye" /></a>
+                class="logo" alt="Logo Fisheye" /></a>
     </header>
     
     <main id="main">
@@ -25,7 +25,7 @@
                 <h3 id="desc" class="photograph-desc" tabindex="2"></h3>
             </div>
             <div class="photograph-header-bloc-2">
-                <button id="btn-contact" class="contact_button" tabindex="3">Contactez-moi</button>
+                <button id="btn-contact" class="contact_button" tabindex="3" aria-label="Contact me">Contactez-moi</button>
             </div>
             <div class="photograph-header-bloc-3">
                 <img id="img" class="photograph-img" tabindex="3">
@@ -35,54 +35,54 @@
         <h2 class="trier-par">Trier par</h2>
 
         <nav>
-            <button id="menu-button" class="sort-by" tabindex="3">
+            <button id="menu-button" class="sort-by" tabindex="3" aria-label="3 sort choices, default sort by popularity">
                 <span id="sort-choice"></span>
                 <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div id="second-part-menu" aria-hidden="true">
-                <button id="likes" class="sortBy sort-by" tabindex="3">
-                    <span>Popularité</span>
+                <button id="likes" class="sortBy sort-by" tabindex="3" aria-label="Popularity">
+                    <span aria-hidden="true">Popularité</span>
                     <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <div id="white-line"></div>
                 <button id="date" class="sortBy sort-by" tabindex="3">Date</button>
                 <div id="white-line"></div>
-                <button id="title" class="sortBy sort-by" tabindex="3">Titre</button>
+                <button id="title" class="sortBy sort-by" tabindex="3" aria-label="Title">Titre</button>
             </div>
         </nav>
 
         <div id="photograph-medias">
         </div>
 
-        <div id="likes-banner">
+        <div id="likes-banner" tabindex="5" aria-label="photographer total likes and price banner">
             <div id="banner-display">
 
                 <div id="like-counter-banner">
-                    <div id="total-likes"></div>
+                    <div id="total-likes" tabindex="5" aria-label="total likes"></div>
                     <i class="fa-solid fa-heart like-icon-banner"></i>
                 </div>
 
                 <div id="price-photograph-banner">
-                    <div id="price-banner"></div>
+                    <div id="price-banner" tabindex="5" aria-label="photographer price"></div>
                 </div>
             </div>
         </div>
 
         <div id="lightbox-modal" aria-hidden="true">
-            <button id="left">
+            <button id="left" aria-label="previous frame">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
             <div class="lightbox-medias">
-                <button id="box-acces" tabindex="0">
+                <button id="box-acces" tabindex="0" aria-label="Media">
                     <div id="media-container-lightbox"></div>
                 </button>
                 <h2 class="title-picture-lightbox">Titre Media</h2>
             </div>
             <div class="icon-right-lightbox">
-                <button id="close-button">
+                <button id="close-button" aria-label="close and return to the photographer's page">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <button id="right">
+                <button id="right" aria-label="next picture">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
@@ -98,28 +98,28 @@
                     <div id="name-profil"></div>
                 </div>
                 <button id="close-img-button">
-                    <img  src="public/assets/icons/close.svg" alt="Fermer la modale de contact" />
+                    <img aria-label="This is the close button, press tab again to enter your information or enter to close contact mode" src="public/assets/icons/close.svg"/>
                 </button> 
             </header>
             <form id="contact_form">
                 <div class="formData">
-                    <label for="form-prenom">Prénom</label>
+                    <label for="form-prenom" aria-label="Enter your first name">Prénom</label>
                     <input id="form-prenom" class="text-control" type="text" />
                 </div>
                 <div class="formData">
-                    <label for="form-nom">Nom</label>
+                    <label for="form-nom" aria-label="Enter your Name">Nom</label>
                     <input id="form-nom" class="text-control" type="text" />
                 </div>
                 <div class="formData">
-                    <label for="form-email">Email</label>
+                    <label for="form-email" aria-label="Enter your Email">Email</label>
                     <input id="form-email" class="text-control" type="email" />
                 </div>
                 <div class="formData">
-                    <label for="form-message">Votre message</label>
+                    <label for="form-message" aria-label="write your message">Votre message</label>
                     <textarea name="form-message" id="form-message" class="input-message text-control"></textarea>
                 </div>
 
-                <button class="contact_button" type="submit">Envoyer</button>
+                <button class="contact_button" type="submit" aria-label="send">Envoyer</button>
             </form>
         </div>
     </div>
