@@ -47,7 +47,7 @@ getPhotographer(photographerId)
     photographerPrice.ariaLabel = photographer.price + "€ per day";
   })
 
-// Fonction de récupération des médias du photographe par son id
+// Fonction de récupération des médias du photographe par son id, une fois récupérer éxécution de displayMedias
 getMedias(photographerId)
   .then(displayMedias)
 
