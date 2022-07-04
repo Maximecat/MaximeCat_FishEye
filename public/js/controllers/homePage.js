@@ -5,7 +5,7 @@ import { getPhotographers } from "../service/service.js";
 getPhotographers()
     .then((photographers) => displayPhotographers(photographers))
 
-// Fonction qui parcours la liste des photographes (boucle) et les affiche dans le main (en dynamique)
+// Fonction qui parcours la liste des photographes (boucle) et les affiche dans le main
 function displayPhotographers(photographers) {
     // Récupération du main
     const photographersContainer = document.getElementById('photographers-container');
