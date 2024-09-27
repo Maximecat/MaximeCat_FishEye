@@ -28,9 +28,10 @@ Il vous faut développer une application web modulaire, en utilisant des design 
 Cela impliquera l'écriture de code maintenable et la gestion des événements du site.
 
 ## Languages utilisés
-- 
-- 
-- 
+- HTML
+- CSS
+- JavaScript
+- Fetch Datas | Récupération de données (JSON)
 
 ## Compétences évaluées
 - Assurer l'accessibilité d'un site web
