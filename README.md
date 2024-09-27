@@ -43,7 +43,7 @@ Cela impliquera l'écriture de code maintenable et la gestion des événements d
 
 ### Identité graphique
 - Les couleurs sont : 
-![colors FishEye](public/images/README-image/colors.png)
+* ![colors FishEye](public/images/README-image/colors.png)
 
 ### Cahier des charges
 - 
