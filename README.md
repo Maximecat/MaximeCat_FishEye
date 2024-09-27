@@ -10,11 +10,6 @@ L'accent sera mis sur la création d'une application web accessible, modulaire e
 
 Vous commencerez par créer un prototype fonctionnel du site web en utilisant HTML, CSS et JavaScript.
 
-- Vous aurez à votre disposition : 
-  * Des maquettes
-  * Des données JSON 
-  * Un code de base pour démarrer.
-
 - Votre tâche consistera à intégrer diverses fonctionnalités telles que : 
   * La récupération et l'affichage des données 
   * La navigation entre les pages des photographes
@@ -42,16 +37,13 @@ Cela impliquera l'écriture de code maintenable et la gestion des événements d
 ## Informations supplémentaires
 
 ### Éléments fournis par l'entreprise
-- 
-- 
-- 
+- Des maquettes
+- Des données JSON 
+- Un code de base pour démarrer.
 
 ### Identité graphique
 - Les couleurs sont : 
-- Les police sont --> 
-   * Texte:  ["Roboto-Regular"](https://fonts.google.com/specimen/Roboto) / ["Roboto-Thin"](https://fonts.google.com/specimen/Roboto)
-   /// 
-   * Logo et titres: ["Shrikland-Regular"](https://fonts.google.com/specimen/Shrikhand)
+- ![colors FishEye](public/images/README-image/colors.png)
 
 ### Cahier des charges
 - 
