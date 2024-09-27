@@ -17,11 +17,6 @@ Vous commencerez par créer un prototype fonctionnel du site web en utilisant HT
   * Une LightBox pour les médias
   * La gestion des likes.
 
-L'accessibilité sera une priorité absolue dans ce projet. 
-
-Il vous faut développer une application web modulaire, en utilisant des design patterns en JavaScript. 
-Cela impliquera l'écriture de code maintenable et la gestion des événements du site.
-
 ## Languages utilisés
 - HTML
 - CSS
@@ -46,10 +41,13 @@ Cela impliquera l'écriture de code maintenable et la gestion des événements d
 * ![colors FishEye](public/images/README-image/colors.png)
 
 ### Cahier des charges
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- L'accessibilité sera une priorité absolue dans ce projet. 
+- Il vous faut développer une application web modulaire, en utilisant des design patterns en JavaScript.
+- Cela implique l'écriture de code maintenable et la gestion des événements du site.
+- Intégrer la récupération et l'affichage des données 
+- Intégrer la navigation entre les pages des photographes
+- Intégrer une modale de contact
+- Intégrer une LightBox pour les médias
+- Intégrer la gestion des likes.
+- Les maquettes version Desktop uniquement sont fournies, proposer des versions du site pour tablette et mobile.
+- Bien que le site web soit un prototype, il devrait correspondre aux maquettes et fonctionner correctement (pas d'erreur dans la console).
