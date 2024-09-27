@@ -1,7 +1,7 @@
 # ![Logo Fisheye](public/assets/logo/logo.png)
 
 ## Objectif(s)
-
+Créez un site accessible pour une plateforme de photographes nommé "FishEye" et versionnerez votre projet avec Git et GitHub.
 
 ## Résumé de la mission
 
