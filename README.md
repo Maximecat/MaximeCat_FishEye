@@ -4,7 +4,7 @@
 Créez un site accessible pour une plateforme de photographes nommé "FishEye" et versionnerez votre projet avec Git et GitHub.
 
 ## Résumé de la mission
-Dans ce projet, vous travaillerez sur le développement d'un site web pour une plateforme d’artistes.
+La mission principal sera de développement un site web pour une plateforme d’artistes.
 
 L'accent sera mis sur la création d'une application web accessible, modulaire et utilisant des design patterns en JavaScript.
 
