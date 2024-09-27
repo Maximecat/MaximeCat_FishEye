@@ -45,7 +45,7 @@ Cela impliquera l'écriture de code maintenable et la gestion des événements d
 - Les couleurs sont : 
 - ![colors FishEye](public/images/README-image/colors.png)
 
-### Cahier des charges
+### Cahier des chargess
 - 
 - 
 - 
